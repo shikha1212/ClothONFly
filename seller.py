@@ -65,8 +65,6 @@ class Seller:
         Database.Database.close_connection()
 
 
-    def ship_item(self,):
-
 seller1 = Seller()
 seller1.remove_item(Item_ID=3)
 seller1.add_item(Brand_Name="Nike",Type="T-shirt",Size="M",Gender="Male",Original_Price=50,Rental_Price=10,Owner_ID=1,Location="Austin",Cloth_Image="shirt.jpg",Deposit=20,Available_From="2019-07-22")
