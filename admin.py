@@ -33,6 +33,9 @@ class Admin:
             db.commit()
         Database.Database.close_connection()
 
+    def bulk_register(self):
+        return None
+
     def login(self,User_Name,Password):
         '''
         Description goes here
@@ -46,3 +49,8 @@ class Admin:
         else:
             print("Authentication Failed")
             return False
+
+
+admin1 = Admin()
+# admin1.register('1234D',123,'Buyer','Shikha','Singh','shikha@xyz.com','Lakeline,Cedar Park','123456789')
+admin1.login('1234D',123)
