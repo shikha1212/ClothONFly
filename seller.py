@@ -16,6 +16,8 @@ import glob
 
 class Seller:
     image_dir = "Images/"
+    export_dir ="Exports/"
+    import_dir = "Import_Files/"
 
     @staticmethod
     def add_item(Brand_Name,Type,Size,Gender,Original_Price,Rental_Price,Owner_ID,Location,Cloth_Image,Deposit,Available_From=date.today()) :
@@ -113,12 +115,14 @@ class Seller:
 
     @staticmethod
     def bulk_item_upload(filename):
-        with open(filename,'r') as file:
-            items = csv.DictReader(file)
-            for item in items:
-                if item['AvailableFrom'] == '':
-                    item['AvailableFrom'] = date.today()
-                Seller().add_item(item['Brand'], item['Type'],item['Size'],item['Gender'],item['OriginalPrice'],item['RentalPrice'],item['OwnerID'],item['Location'],item['ClothImage'],item['Deposit'],item['AvailableFrom'])
+        for file in glob.glob(Seller.import_dir+'/*'):
+            if (str(file).replace(Seller.import_dir,'')) == filename:
+                with open(filename,'r') as myfile:
+                    items = csv.DictReader(myfile)
+                    for item in items:
+                        if item['AvailableFrom'] == '':
+                            item['AvailableFrom'] = date.today()
+                            Seller().add_item(item['Brand'], item['Type'],item['Size'],item['Gender'],item['OriginalPrice'],item['RentalPrice'],item['OwnerID'],item['Location'],item['ClothImage'],item['Deposit'],item['AvailableFrom'])
 
     # @staticmethod
     # def export_all_orders():
