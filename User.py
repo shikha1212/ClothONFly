@@ -1,4 +1,5 @@
-import Database
+from ClothONFly import Database
+
 
 class User():
     def __init__(self,User_Name, Password, User_Type=None, First_Name=None, Last_Name=None, Email=None, Address= None, Phone_Num=None):
@@ -11,9 +12,14 @@ class User():
         self.Address = Address
         self.Phone_Num = Phone_Num
 
-    @classmethod
-    def get_by_username(cls, User_Name):
-        data = Database.find_one('users', {'email': email})
-        print(data)
-        if data is not None:
-            return cls(**data)
+
+    def get_id_by_username(self):
+        db = Database.Database.initialize()
+        cursor = db.cursor()
+
+        id = cursor.execute('''Select User_ID from Users where User_Name = ?''', 'Shikha123')
+        if id is not None:
+            return id
+
+user1 = User('Shikha123','123')
+print(user1.get_id_by_username())

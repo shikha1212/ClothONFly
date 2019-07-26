@@ -7,12 +7,12 @@
 
 # Major: MSITM
 
-import Ipynb_importer
-import sqlite3
-import Database
-from datetime import date, datetime
+
+from ClothONFly import Database
+from datetime import date
 import csv
 import glob
+
 
 class Seller:
     image_dir = "Images/"
@@ -30,7 +30,6 @@ class Seller:
 
         for image in glob.glob(Seller.image_dir+'/*'):
             if (str(image).replace(Seller.image_dir,'')) == Cloth_Image:
-                print(str(image))
                 with open(image, 'rb') as file:
                     blobData = file.read()
 
@@ -132,13 +131,40 @@ class Seller:
         db = Database.Database.initialize()
         cursor = db.cursor()
         cursor.execute('''select o.Order_ID,o.Order_Status As "Order Status", o.Delivery_Date As "Delivery Date",o.Return_Date As "Return Date",o.Shipping_Address AS "Shipping Address",
-                                u.First_Name AS "Buyer's First Name",u.Last_Name AS "Buyer's LastName",u.Email AS "Buyer's Email",u.Phone_Num AS "Buyer's Contact",
-                                i.Brand_Name AS "Product's Brand",i.Type AS "Product Type", i.Size AS "Product Size",i.Gender AS "Gender",
-                                usr.First_Name as "Seller's first Name", usr.Last_Name as "Seller's Last Name", usr.Email As "Seller's Email",usr.Phone_Num AS "Seller's Contact"
-                                from Orders o join Users u on u.User_ID=o.User_ID join Inventory_Items i on o.Item_ID = i.Item_ID join Users usr on i.Owner_ID =usr.User_ID ''')
+                                    u.First_Name AS "Buyer's First Name",u.Last_Name AS "Buyer's LastName",u.Email AS "Buyer's Email",u.Phone_Num AS "Buyer's Contact",
+                                    i.Brand_Name AS "Product's Brand",i.Type AS "Product Type", i.Size AS "Product Size",i.Gender AS "Gender",
+                                    usr.First_Name as "Seller's first Name", usr.Last_Name as "Seller's Last Name", usr.Email As "Seller's Email",usr.Phone_Num AS "Seller's Contact"
+                                    from Orders o join Users u on u.User_ID=o.User_ID join Inventory_Items i on o.Item_ID = i.Item_ID join Users usr on i.Owner_ID =usr.User_ID ''')
 
-        with open(Seller.export_dir+'/'+"Orders_export_"+ str(date.today()) + ".csv", "w", newline='') as file:
+
+        with open(Seller.export_dir + '/' + "Orders_export_" + str(date.today()) + ".csv", "w", newline='') as file:
             csv_writer = csv.writer(file)
             csv_writer.writerow([i[0] for i in cursor.description])  # write headers
             csv_writer.writerows(cursor)
 
+    @staticmethod
+    def orders_per_seller(Seller_ID):
+
+        db = Database.Database.initialize()
+        cursor = db.cursor()
+        cursor.execute('''select User_Name from Users where User_ID = ?''',(Seller_ID,))
+        for row in cursor.fetchall():
+            seller = row[0]
+        print(seller)
+        cursor.execute('''select o.Order_ID,o.Order_Status As "Order Status", o.Delivery_Date As "Delivery Date",o.Return_Date As "Return Date",o.Shipping_Address AS "Shipping Address",
+                                        u.First_Name AS "Buyer's First Name",u.Last_Name AS "Buyer's LastName",u.Email AS "Buyer's Email",u.Phone_Num AS "Buyer's Contact",
+                                        i.Brand_Name AS "Product's Brand",i.Type AS "Product Type", i.Size AS "Product Size",i.Gender AS "Gender",
+                                        usr.First_Name as "Seller's first Name", usr.Last_Name as "Seller's Last Name", usr.Email As "Seller's Email",usr.Phone_Num AS "Seller's Contact"
+                                        from Orders o join Users u on u.User_ID=o.User_ID join Inventory_Items i on o.Item_ID = i.Item_ID join Users usr on i.Owner_ID =usr.User_ID 
+                                        where usr.User_ID = ? ''', (Seller_ID,))
+
+
+
+        with open(Seller.export_dir + '/' + seller + "'s_Orders_export_" + str(date.today()) + ".csv", "w", newline='') as file:
+            csv_writer = csv.writer(file)
+            csv_writer.writerow([i[0] for i in cursor.description])  # write headers
+            csv_writer.writerows(cursor)
+
+
+# Seller.all_orders()
+Seller.orders_per_seller(2)
