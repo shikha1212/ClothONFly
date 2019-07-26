@@ -13,11 +13,12 @@ import Database
 from datetime import date, datetime
 import csv
 import glob
+import os
 
 class Seller:
     image_dir = "Images/"
-    export_dir ="Exports/"
-    import_dir = "Import_Files/"
+    export_dir = "Exports/"
+    import_dir = "ImportFiles/"
 
     @staticmethod
     def add_item(Brand_Name,Type,Size,Gender,Original_Price,Rental_Price,Owner_ID,Location,Cloth_Image,Deposit,Available_From=date.today()) :
@@ -95,7 +96,7 @@ class Seller:
         cursor = db.cursor()
         cursor.execute('''Update Orders 
                     set Order_Status = 'Return Received(Deposit Refunded)'
-                    where Order_ID = ?''', (str(Order_ID)))
+                    where Order_ID = ? and Return_Date >= ? and Order_Status = "Return Initiated" ''', (str(Order_ID),date.today()))
         db.commit()
         Database.Database.close_connection()
 
@@ -105,7 +106,7 @@ class Seller:
         cursor = db.cursor()
         cursor.execute('''Update Orders 
                         set Order_Status = 'Return Not Received(Deposit Withheld)'
-                        where Order_ID = ?''', (str(Order_ID)))
+                        where Order_ID = ? and Return_Date < ? and Order_Status != "Return Initiated" ''', (str(Order_ID),date.today()))
         db.commit()
         Database.Database.close_connection()
 
@@ -115,31 +116,38 @@ class Seller:
 
     @staticmethod
     def bulk_item_upload(filename):
-        for file in glob.glob(Seller.import_dir+'/*'):
-            if (str(file).replace(Seller.import_dir,'')) == filename:
-                with open(filename,'r') as myfile:
-                    items = csv.DictReader(myfile)
+        for files in glob.glob(Seller.import_dir + '/*'):
+            if (str(files).replace(Seller.import_dir, '')) == filename:
+                with open(Seller.import_dir + '/'+filename, 'r') as inputfile:
+                    items = csv.DictReader(inputfile)
+
                     for item in items:
                         if item['AvailableFrom'] == '':
                             item['AvailableFrom'] = date.today()
-                            Seller().add_item(item['Brand'], item['Type'],item['Size'],item['Gender'],item['OriginalPrice'],item['RentalPrice'],item['OwnerID'],item['Location'],item['ClothImage'],item['Deposit'],item['AvailableFrom'])
+                        Seller().add_item(item['Brand'],item['Type'],item['Size'],item['Gender'],item['OriginalPrice'],item['RentalPrice'],item['OwnerID'],item['Location'],item['ClothImage'],item['Deposit'],item['AvailableFrom'])
 
-    # @staticmethod
-    # def export_all_orders():
-    #
-    #     db = Database.Database.initialize()
-    #     cursor = db.cursor()
-    #     cursor.execute('''select * from Orders join Users on Orders.User_ID=Users.User_ID join Inventory_Items on Orders.Item_ID = Inventory_Items.Item_ID''')
-    #     with open("All_Orders_export.csv", "w", newline='') as file:
-    #         csv_writer = csv.writer(file)
-    #         csv_writer.writerow([i[0] for i in cursor.description])  # write headers
-    #         csv_writer.writerows(cursor)
+    @staticmethod
+    def all_order():
+
+        db = Database.Database.initialize()
+        cursor = db.cursor()
+        cursor.execute('''select o.Order_ID,o.Order_Status As "Order Status", o.Delivery_Date As "Delivery Date",o.Return_Date As "Return Date",o.Shipping_Address AS "Shipping Address",
+                                u.First_Name AS "Buyer's First Name",u.Last_Name AS "Buyer's LastName",u.Email AS "Buyer's Email",u.Phone_Num AS "Buyer's Contact",
+                                i.Brand_Name AS "Product's Brand",i.Type AS "Product Type", i.Size AS "Product Size",i.Gender AS "Gender",
+                                usr.First_Name as "Seller's first Name", usr.Last_Name as "Seller's Last Name", usr.Email As "Seller's Email",usr.Phone_Num AS "Seller's Contact"
+                                from Orders o join Users u on u.User_ID=o.User_ID join Inventory_Items i on o.Item_ID = i.Item_ID join Users usr on i.Owner_ID =usr.User_ID ''')
+
+        with open(Seller.export_dir+'/'+"Orders_export_"+ str(date.today()) + ".csv", "w", newline='') as file:
+            csv_writer = csv.writer(file)
+            csv_writer.writerow([i[0] for i in cursor.description])  # write headers
+            csv_writer.writerows(cursor)
 
 
-Seller.bulk_item_upload('ItemInventory.csv')
+# Seller.bulk_item_upload('ItemInventory2.csv')
 # seller1.remove_item(Item_ID=3)
 # Seller.update_item(Item_ID=15,Brand_Name="Puma",Type="T-shirt",Size="M",Gender="Male",Original_Price=50,Rental_Price=10,Owner_ID=1,Location="Austin",Cloth_Image="shirt.jpg",Deposit=20,Available_From="2019-07-22")
 #
 # Seller.withhold_deposit(1)
+# Seller.refund_deposit(1)
 # Seller.export_all_orders()
 

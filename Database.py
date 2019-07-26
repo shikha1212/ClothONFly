@@ -51,7 +51,7 @@ class Database():
                                     Delivery_Date Date Not Null, 
                                     Return_Date Date Not Null, 
                                     Shipping_Address Text Not Null,
-                                    Order_Status Text Not Null check(Order_Status = "Order Received(Shipment Pending)" or Order_Status = "Order Shipped" or Order_Status = "  Initiated" or Order_Status = "Return Received(Deposit Refunded)" or Order_Status = "Return Not Received(Deposit Withheld)"),
+                                    Order_Status Text Not Null check(Order_Status = "Order Received(Shipment Pending)" or Order_Status = "Order Shipped" or Order_Status = "Return Initiated" or Order_Status = "Return Received(Deposit Refunded)" or Order_Status = "Return Not Received(Deposit Withheld)"),
                                     Shipping_Date Date, 
                                     FOREIGN KEY(User_ID) REFERENCES Users(User_ID), 
                                     FOREIGN KEY(Item_ID) References Inventory_Items(Item_ID))

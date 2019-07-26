@@ -1,0 +1,2 @@
+Order_ID,Order Status,Delivery Date,Return Date,Shipping Address,Buyer's First Name,Buyer's LastName,Buyer's Email,Buyer's Contact,Product's Brand,Product Type,Product Size,Gender,Seller's first Name,Seller's Last Name,Seller's Email,Seller's Contact
+1,Return Received(Deposit Refunded),2019-07-22,2019-07-25,"123, Cedar Park",Shikha,Singh,shikha@xyz.com,1234567890,Nike,T-shirt,M,Male,Admin2,Singh,shikha@xyz.com,1234567890
