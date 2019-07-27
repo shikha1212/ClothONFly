@@ -6,7 +6,12 @@ class Database():
 
     @staticmethod
     def initialize():
-        return sqlite3.connect(Database.dbname)
+        try:
+            connect = sqlite3.connect(Database.dbname)
+            return connect
+        except:
+            print(e)
+            return None
 
     @staticmethod
     def close_connection():
@@ -62,4 +67,4 @@ class Database():
         connect.commit()
 
 
-
+Database.initialize()
