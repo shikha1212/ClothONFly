@@ -1,0 +1,3 @@
+Order_ID,Order Status,Delivery Date,Return Date,Shipping Address,Buyer's First Name,Buyer's LastName,Buyer's Email,Buyer's Contact,Product ID,Product's Brand,Product Type,Product Size,Gender,Seller's first Name,Seller's Last Name,Seller's Email,Seller's Contact
+1,Order Shipped,2019-08-04,2019-07-14,"7006 N Lamar, Austin, Texas",seller,test,sellertest@gmail.com,123456789,2,Acne Studio,Sweater,M,Unisex,seller,test,sellertest@gmail.com,123456789
+2,Order Received(Shipment Pending),2019-08-04,2019-08-14,"3780, south coast drive, Irvine, CA",buyer,test,buyertest@gmail.com,123456789,4,Levis,Jeans,M,Male,seller,test,sellertest@gmail.com,123456789
