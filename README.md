@@ -1,2 +1,0 @@
-# ClothONFly
-Rental clothing application

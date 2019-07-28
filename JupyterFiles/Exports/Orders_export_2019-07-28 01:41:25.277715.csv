@@ -1,0 +1,2 @@
+Order_ID,Order Status,Delivery Date,Return Date,Shipping Address,Buyer's First Name,Buyer's LastName,Buyer's Email,Buyer's Contact,Product ID,Product's Brand,Product Type,Product Size,Gender,Seller's first Name,Seller's Last Name,Seller's Email,Seller's Contact
+4,Order Received(Shipment Pending),2019-08-04,2019-08-07,test,Pawan,RP,rp_pawan@email.com,1234567890,33,Zara,Skirt,L,Female,TestSeller,1,Seller1@email.com,1234567890
