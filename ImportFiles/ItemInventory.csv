@@ -1,0 +1,13 @@
+S.No,Brand,Type,Size,Gender,OriginalPrice,RentalPrice,OwnerID,Location,ClothImage,Deposit,AvailableFrom
+1,Calvin Clein,T-shirt,M,Male,75,10,4,Austin,cloth1.jpg,20,
+2,Ralph Lauren,Dress,S,Female,145,20,4,Austin,cloth2.jpg,50,
+3,Zara,Skirt,L,Female,80,10,4,Austin,cloth3.jpg,40,
+4,Calvin Clein,T-shirt,M,Male,75,10,4,Austin,cloth4.jpg,20,
+5,Ralph Lauren,Dress,S,Female,145,20,4,Austin,cloth5.jpg,50,
+6,Zara,Skirt,L,Female,80,10,4,Austin,cloth6.jpg,40,
+7,Calvin Clein,T-shirt,M,Male,75,10,4,Austin,cloth7.jpg,20,
+8,Ralph Lauren,Dress,S,Female,145,20,4,Austin,Img1.jpg,50,
+9,Zara,Skirt,L,Female,80,10,4,Austin,Img2.jpg,40,
+10,Calvin Clein,T-shirt,M,Male,75,10,4,Austin,Img5.jpg,20,
+11,Ralph Lauren,Dress,S,Female,145,20,4,Austin,Img3.jpg,50,
+12,Zara,Skirt,L,Female,80,10,4,Austin,Img2.jpg,40,
