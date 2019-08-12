@@ -18,7 +18,7 @@
        display: block;
        color: #000000;
        text-align: right;
-       padding: 20px 40px;
+       padding: 7px 40px;
        text-decoration: none;
        font-size: 17px;
        font-family: Roboto;
@@ -27,6 +27,18 @@
    .navbar a:hover {
        color: #BD4D04;
    }
+
+   legend {
+  border: 1px solid #888;
+  border-right: 1px solid #666;
+  border-bottom: 1px solid #666;
+  padding: .5em;
+  background-color: #B6452C;
+}
+
+body { padding-top: 70px;
+       background-color: #DDC5A2;
+       }
 </style>
 
 <div id="legend">
@@ -45,8 +57,9 @@
       </fieldset>
 </div>
 <div class="col-md-4">
+
     {% for order in orders %}
-   <h4 style="margin-left:5em;">Order ID : {{ order['Order_ID'] }} : {{ order['Order_Status'] }}</h4>
+    <h4 style="margin-left:5em;">Order ID : {{ order['Order_ID'] }} : {{ order['Order_Status'] }}</h4>
     <p style="margin-left:5em;">Delivery Date : {{ order['Delivery_Date'] }}</p>
     <p style="margin-left:5em;">Shipping_Address : {{ order['Shipping_Address'] }}</p>
     <p style="margin-left:5em;">Shipping_Date : {{ order['Shipping_Date'] }}</p>
@@ -66,6 +79,7 @@
     <p style="margin-left:5em;">Product's deposit amount: {{ order['Deposit'] }}</p>
     <hr>
     {% endfor %}
+
 </div>
 
 

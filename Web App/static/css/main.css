@@ -4,8 +4,10 @@ legend {
   border-right: 1px solid #666;
   border-bottom: 1px solid #666;
   padding: .5em
-  background-color: #CCC;
+  background-color: #B6452C;
 }
 
-body { padding-top: 70px; }
+body { padding-top: 70px;
+       background-color: #DDC5A2;
+       }
 

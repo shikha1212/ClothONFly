@@ -18,7 +18,7 @@
        display: block;
        color: #000000;
        text-align: right;
-       padding: 20px 40px;
+       padding: 7px 40px;
        text-decoration: none;
        font-size: 17px;
        font-family: Roboto;
@@ -27,11 +27,26 @@
    .navbar a:hover {
        color: #BD4D04;
    }
+
+   legend {
+  border: 1px solid #888;
+  border-right: 1px solid #666;
+  border-bottom: 1px solid #666;
+  padding: .5em;
+  background-color: #B6452C;
+}
+
+body { padding-top: 70px;
+       background-color: #DDC5A2;
+       }
 </style>
 
 <div id="legend">
       <fieldset>
-      <legend class="">Welcome {{ user_name }} !! Here are the items available for renting
+      <legend class="">Welcome {{ user_name }} !<br>
+          Here are the items available for renting
+          {{ message }}
+
       </legend>
   <div class="navbar" id="menu">
   <a href="/buyerhome/{{ user_name }}">Home</a>
@@ -43,16 +58,16 @@
 
 <div class="col-md-4" xmlns="http://www.w3.org/1999/html">
      {% for item in items %}
-<img src="../static/images/{{ item['Item_ID'] }}.jpg" height="230" width="230" style="margin-left:5em;"/>
+<img src="../static/images/{{ item['Item_ID'] }}.jpg" height="230" width="230" style="margin-left:10em;"/>
 
     <!--<img src="7.jpg" height="230" width="230">-->
- <h4 style="margin-left:5em;"> Item ID : {{ item['Item_ID'] }} </h4>
-<p style="margin-left:5em;"> Brand Name : {{ item['Brand_Name'] }} </p>
-<p style="margin-left:5em;"> Original Price(USD) : {{ item['Original_Price'] }} </p>
-<p style="margin-left:5em;"> Rental Price(USD) : {{ item['Rental_Price'] }} </p>
-<p style="margin-left:5em;"> Deposit Amount (USD) : {{ item['Deposit'] }} </p>
-<p style="margin-left:5em;"> Size : {{ item['Size'] }} </p>
-    <a href="/rent/item/{{ item['Item_ID'] }}/{{ user_name }}"> <button class="btn btn-success" style="margin-left:5em;"> Rent Now </button></a>
+ <h4 style="margin-left:10em;"> Item ID : {{ item['Item_ID'] }} </h4>
+<p style="margin-left:10em;"> Brand Name : {{ item['Brand_Name'] }} </p>
+<p style="margin-left:10em;"> Original Price(USD) : {{ item['Original_Price'] }} </p>
+<p style="margin-left:10em;"> Rental Price(USD) : {{ item['Rental_Price'] }} </p>
+<p style="margin-left:10em;"> Deposit Amount (USD) : {{ item['Deposit'] }} </p>
+<p style="margin-left:10em;"> Size : {{ item['Size'] }} </p>
+    <a href="/rent/item/{{ item['Item_ID'] }}/{{ user_name }}"> <button class="btn btn-success" style="margin-left:10em;"> Rent Now </button></a>
     <hr>
     {% endfor %}
 

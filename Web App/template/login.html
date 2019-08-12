@@ -18,7 +18,7 @@
        display: block;
        color: #000000;
        text-align: right;
-       padding: 20px 40px;
+       padding: 7px 40px;
        text-decoration: none;
        font-size: 17px;
        font-family: Roboto;
@@ -27,6 +27,19 @@
    .navbar a:hover {
        color: #BD4D04;
    }
+
+   legend {
+  border: 1px solid #888;
+  border-right: 1px solid #666;
+  border-bottom: 1px solid #666;
+  padding: .5em;
+  background-color: #B6452C;
+}
+
+body { padding-top: 70px;
+       background-color: #DDC5A2;
+       }
+
 </style>
 
 <form class="form-horizontal" action='/login' method="POST" xmlns="http://www.w3.org/1999/html">
@@ -56,7 +69,7 @@
     </div>
 
     <div class="control-group">
-     <input type="submit" name="action" class="btn btn-info" value="Log In" style="margin-left:8em;"/>
+     <input type="submit" name="action" class="btn btn-info" value="Log In" style="margin-left:12em;"/>
     <input type="submit" name="action" class="btn btn-info" value="Sign Up"/>
     </div>
 </form>

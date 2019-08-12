@@ -18,7 +18,7 @@
        display: block;
        color: #000000;
        text-align: right;
-       padding: 20px 40px;
+       padding: 7px 40px;
        text-decoration: none;
        font-size: 17px;
        font-family: Roboto;
@@ -27,6 +27,24 @@
    .navbar a:hover {
        color: #BD4D04;
    }
+
+   div.top {
+   font-family: Roboto;
+   text-align: center;
+   }
+
+   legend {
+  border: 1px solid #888;
+  border-right: 1px solid #666;
+  border-bottom: 1px solid #666;
+  padding: .5em;
+  background-color: #B6452C;
+}
+
+body { padding-top: 70px;
+       background-color: #DDC5A2;
+       }
+
 </style>
 
 
@@ -42,16 +60,21 @@
               <a href="/adminremovei/{{ user_name}}">Remove Items</a>
     <a href="/logout">Sign Out</a>
   </div>
+</div>
 
-
+<div class="top">
+<h3> ADMIN HOMEPAGE</h3>
+<h5> Please check the backgroud of users and items to see if it is appropriate for Cloth ON Fly </h5>
+<h5> It is extremely important for us the keep the community clean </h5>
+<h5> You can either click the button down here or click the navigation bar options for actions. </h5>
 </div>
 
 <form class="form-horizontal" action='/adminremoveu/{{ user_name }}' method="POST" xmlns="http://www.w3.org/1999/html">
-    <input type="submit" name="action" class="btn btn-info" value="Remove Users" />
+    <input type="submit" name="action" class="btn btn-info" value="Remove Users" style="margin-left:47%;"/>
 </form>
 
 <form class="form-horizontal" action='/adminremovei/{{ user_name }}' method="POST" xmlns="http://www.w3.org/1999/html">
-    <input type="submit" name="action" class="btn btn-info" value="Remove Items" />
+    <input type="submit" name="action" class="btn btn-info" value="Remove Items" style="margin-left:47%;"/>
 </form>
 
 

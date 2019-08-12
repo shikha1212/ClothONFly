@@ -237,7 +237,7 @@ def confirm_order(Item_ID,user_name,days):
 
 
 @app.route('/Myorders/<string:user_name>',methods = ['POST','GET'])
-def my_orders(user_name,message=''):
+def my_orders(user_name,message='',message1=''):
     user_name = user_name
     message=message
     conn = db_connect()
@@ -257,7 +257,7 @@ def my_orders(user_name,message=''):
         else:
             message = "Here are your orders"
         conn.close()
-    return render_template('myorders.html',orders=orders,user_name=user_name,message=message)
+    return render_template('myorders.html',orders=orders,user_name=user_name,message=message,message1=message1)
 
 @app.route('/return_item/<string:Order_ID>/<string:Item_ID>/<string:user_name>',methods = ['POST','GET'])
 def return_item(Order_ID,Item_ID,user_name):
@@ -283,9 +283,9 @@ def return_item(Order_ID,Item_ID,user_name):
                     cursor.execute('Update Inventory_Items set Available_From = %s where Item_ID = %s',(date.today(),Item_ID))
                     conn.commit()
                     conn.close()
-            return my_orders(user_name,message ="Item has been returned to seller")
+            return my_orders(user_name,message1 =" -- Item has been returned to seller")
         else:
-            return my_orders(user_name,message ="Item is not eligible for return")
+            return my_orders(user_name,message1 =" -- This item is not eligible for return")
 
 
 @app.route('/all_orders_for_seller/<string:user_name>',methods = ['POST','GET'])
