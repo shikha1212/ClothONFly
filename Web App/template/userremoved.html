@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form class="form-horizontal" action='/userremoved/{{ user_name }}' method="POST" xmlns="http://www.w3.org/1999/html">
+
+    <style>
+   * {
+       box-sizing: border-box;
+   }
+   /* Add a black background color to the top navigation */
+   .navbar {
+       overflow: hidden;
+   }
+   /* Style the links inside the navigation bar */
+   .navbar {
+       box-shadow: 0 1px 1px 0 rgba(0,0,0,1.9);
+   }
+   .navbar a {
+       float: left;
+       display: block;
+       color: #000000;
+       text-align: right;
+       padding: 20px 40px;
+       text-decoration: none;
+       font-size: 17px;
+       font-family: Roboto;
+   }
+   /* Change the color of links on hover */
+   .navbar a:hover {
+       color: #BD4D04;
+   }
+</style>
+
+
+
+
+    <div id="legend">
+      <fieldset>
+      <legend class="">Enter User Name you want to remove from the system</legend>
+        </fieldset>
+          <div class="navbar" id="menu">
+  <a href="/admin/home/{{ user_name }}">Home</a>
+  <a href="/adminremoveu/{{ user_name}}">Remove Users</a>
+              <a href="/adminremovei/{{ user_name}}">Remove Items</a>
+    <a href="/logout">Sign Out</a>
+  </div>
+    </div>
+
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="user_name">User Name</label>
+      <div class="controls">
+        <input type="text" id="user_name" name="user_name" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success">Confirm</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+{% endblock %}
