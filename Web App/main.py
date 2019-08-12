@@ -16,7 +16,7 @@
 # add1
 import os
 from flask import Flask, request, render_template, Response, send_from_directory
-from datetime import date, datetime,timedelta
+from datetime import date, datetime, timedelta
 
 import pymysql
 # import base64
@@ -28,7 +28,7 @@ db_password = os.environ.get('CLOUD_SQL_PASSWORD')
 db_name = os.environ.get('CLOUD_SQL_DATABASE_NAME')
 db_connection_name = os.environ.get('CLOUD_SQL_CONNECTION_NAME')
 
-app = Flask(__name__,template_folder='template')
+app = Flask(__name__, template_folder='template')
 app.config['secret_key'] = 'secret123456'
 
 def db_connect():
@@ -88,7 +88,7 @@ def check_action():
     elif request.form['action'] == "Sign Up":
         return render_template('register.html')
 
-@app.route("/buyerhome/<string:user_name>",methods = ['POST', 'GET'])
+@app.route("/buyerhome/<string:user_name>", methods = ['POST', 'GET'])
 def buyer_home(user_name):
     user_name = user_name
     conn = db_connect()
@@ -99,11 +99,11 @@ def buyer_home(user_name):
     return render_template("buyerhome.html", items=items, user_name=user_name)
 
 
-@app.route("/sellerhome/<string:user_name>",methods = ['POST', 'GET'])
-def seller_home(user_name,message =''):
+@app.route("/sellerhome/<string:user_name>", methods = ['POST', 'GET'])
+def seller_home(user_name, message =''):
     message = message
     user_name = user_name
-    return render_template("sellerhome.html",user_name=user_name,message = message)
+    return render_template("sellerhome.html", user_name=user_name, message = message)
 
 @app.route("/register/success", methods=['POST'])
 def add_user():
@@ -133,38 +133,35 @@ def add_user():
 
 
 
-@app.route("/itemadded/<string:user_name>", methods=['POST'])
+@app.route("/itemadded/<string:user_name>", methods = ['POST','GET'])
 def item_added(user_name):
     user_name = user_name
-    conn = db_connect()
-    with conn.cursor() as cursor:
-        cursor.execute('SELECT * from Users where User_Name = %s', user_name)
-        users = cursor.fetchall()
-        conn.close()
-    for user in users:
-        Owner_ID = user['User_ID']
 
     Brand_Name = request.form['brand']
     Cloth_Type = request.form['type']
     Size = request.form['size']
     Gender = request.form['gender']
-    Original_Price = float(request.form['original_price'])
-    Rental_Price = float(request.form['rental_price'])
+    Original_Price = request.form['original_price']
+    Rental_Price = request.form['rental_price']
     Location = request.form['location']
     Cloth_Image = request.form['image']
-    Deposit= float(request.form['deposit'])
+    Deposit = request.form['deposit']
     Available_From = date.today()
 
-    # f = Cloth_Image.filename
-    # blobdata = convertToBinaryData(f)
-
     conn = db_connect()
+
     with conn.cursor() as cursor:
-        cursor.execute('Insert into Inventory_Items(Brand_Name, Cloth_Type, Size,Gender, Original_Price, Rental_Price, Owner_ID, Location,Cloth_Image, Deposit, Available_From) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
-                        (Brand_Name, Cloth_Type, Size, Gender, Original_Price, Rental_Price, Cloth_Image, Location, blobdata, Deposit, Available_From))
+        cursor.execute('SELECT * from Users where User_Name = %s', (user_name))
+        users = cursor.fetchall()
+        for user in users:
+            Owner_ID = user['User_ID']
+
+    with conn.cursor() as cursor:
+        cursor.execute('Insert into Inventory_Items(Brand_Name, Cloth_Type, Size, Gender, Original_Price, Rental_Price, Owner_ID, Location, Cloth_Image, Deposit, Available_From) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
+                       (Brand_Name, Cloth_Type, Size, Gender, Original_Price, Rental_Price, Owner_ID, Location, Cloth_Image, Deposit, Available_From))
     conn.commit()
     conn.close()
-    return seller_home(user_name,message ="Item added in inventory and will be available for renting from today")
+    return seller_home(user_name, message="Item added in inventory and will be available for renting from today")
 
 
 @app.route("/rent/item/<string:Item_ID>/<string:user_name>", methods = ['POST', 'GET'])
