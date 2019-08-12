@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="legend">
+      <fieldset>
+      <legend class="">Hello {{ user_name }} !! Enter the number days for which you want rent the selected item and click on the Calculate Price button to get the total price
+      </legend>
+      </fieldset>
+</div>
+
+<div class="col-md-4" xmlns="http://www.w3.org/1999/html">
+    {% for item in items %}
+<img src="{{ item['Cloth_Image'] }}"/>
+<hidden>  <h4> {{ item['Item_ID'] }} </h4> </hidden>
+<h4> Brand Name : {{ item['Brand_Name'] }} </h4>
+<h4> Original Price(USD) : {{ item['Original_Price'] }} </h4>
+<h4> Rental Price(USD) : {{ item['Rental_Price'] }} </h4>
+<h4> Deposit Amount (USD) : {{ item['Deposit'] }} </h4>
+<h4> Size : {{ item['Size'] }} </h4>
+    <h4> Input the no. of days you want to rent this item</h4>
+    <form action="/calculate_price/{{ item['Item_ID'] }}/{{ user_name }}" method="POST">
+        <!--<input type="hidden" id="itemid" name ="itemid" value={{ item['Item_ID'] }} >-->
+        <!--<input type="hidden" id="username" name = "username" value= {{ user_name }} >-->
+    <input type="number" min="1" id="days" name="days" placeholder="1" />
+  <button class="btn btn-success"> Calculate Price </button>
+    <button class="btn btn-success" disabled> Confirm Order </button>
+        </form>
+
+
+
+        {% endfor %}
+
+        </div>
+
+</form>
+
+{% endblock %}

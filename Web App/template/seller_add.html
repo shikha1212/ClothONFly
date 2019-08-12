@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block content %}
+<form class="form-horizontal" action='/itemadded' method="POST" xmlns="http://www.w3.org/1999/html">
+
+    <div id="legend">
+      <fieldset>
+      <legend class="">Enter the details of the item you want to put on rent and click on the "Submit" button</legend>
+        </fieldset>
+    </div>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="brand">Brand</label>
+      <div class="controls">
+        <input type="text" id="brand" name="brand" placeholder="" class="input-xlarge">
+        <p class="help-block">Enter the name of the brand of the item</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="type">Type</label>
+      <div class="controls">
+        <input type="text" id="type" name="type" placeholder="" class="input-xlarge">
+        <p class="help-block">Enter the type of clothing item (e.g. dress, skirt, shirt, etc.)</p>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="size">Size</label>
+      <div class="controls">
+        <input type="text" id="size" name="size" placeholder="" class="input-xlarge">
+        <p class="help-block">Enter the Size of Clothing Item</p>
+      </div>
+    </div>
+
+        <div class="control-group">
+
+      <label class="control-label" for="gender">Gender</label>
+      <div class="controls">
+        <input type="radio" name="gender" value="Male" > Male </input> <br>
+        <input type="radio" name="gender" value="Female" > Female</input><br>
+
+
+      </div>
+    </div>
+
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="original_price">Original Price($)</label>
+      <div class="controls">
+        <input type="text" id="original_price" name="original_price" placeholder="" class="input-xlarge">
+        <p class="help-block">Enter the Original Price of the item</p>
+      </div>
+    </div>
+
+       <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="rental_price">Rental Price($)</label>
+      <div class="controls">
+        <input type="text" id="rental_price" name="rental_price" placeholder="" class="input-xlarge">
+        <p class="help-block">Enter the Rental Price(per day) of the item </p>
+      </div>
+    </div>
+
+     <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="Owner_ID">Owner ID</label>
+      <div class="controls">
+        <input type="text" id="Owner_ID" name="Owner_ID" placeholder="" class="input-xlarge">
+        <p class="help-block">Enter your ID </p>
+      </div>
+    </div>
+
+      <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="location">Location </label>
+      <div class="controls">
+        <input type="text" id="location" name="location" placeholder="" class="input-xlarge">
+        <p class="help-block">Enter the location where this item is available</p>
+      </div>
+    </div>
+
+      <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="deposit">Deposit ($)</label>
+      <div class="controls">
+        <input type="text" id="deposit" name="deposit" placeholder="" class="input-xlarge">
+        <p class="help-block">Enter the Deposit amount required for renting this item </p>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="control-label" for="image">Image</label>
+      <div class="controls">
+        <input type="file" id="image" name="image" placeholder="" class="input-xlarge">
+        <p class="help-block">Upload the image of the item here</p>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+{% endblock %}

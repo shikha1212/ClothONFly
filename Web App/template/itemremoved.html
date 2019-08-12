@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<form class="form-horizontal" action='/itemremoved' method="POST" xmlns="http://www.w3.org/1999/html">
+
+    <div id="legend">
+      <fieldset>
+      <legend class="">Enter Item ID you want to remove from the system</legend>
+        </fieldset>
+    </div>
+
+    <div class="control-group">
+      <!-- ItemID -->
+      <label class="control-label"  for="item_id">Item ID</label>
+      <div class="controls">
+        <input type="number" id="item_id" name="item_id" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success">Confirm</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+{% endblock %}

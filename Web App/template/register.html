@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+<form class="form-horizontal" action='/register/success' method="POST" xmlns="http://www.w3.org/1999/html">
+
+    <div id="legend">
+      <fieldset>
+      <legend class="">Enter your details and click on the "Register" button</legend>
+        </fieldset>
+    </div>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="user_name">User Name</label>
+      <div class="controls">
+        <input type="text" id="user_name" name="user_name" placeholder="" class="input-xlarge">
+        <p class="help-block">Username can contain any letters or numbers</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="password">Password</label>
+      <div class="controls">
+        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+        <p class="help-block">Password should be at least 4 characters</p>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="first_name">First Name</label>
+      <div class="controls">
+        <input type="text" id="first_name" name="first_name" placeholder="" class="input-xlarge">
+        <p class="help-block">Enter your First Name</p>
+      </div>
+    </div>
+
+      <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="last_name">Last Name</label>
+      <div class="controls">
+        <input type="text" id="last_name" name="last_name" placeholder="" class="input-xlarge">
+        <p class="help-block">Enter your Last Name</p>
+      </div>
+    </div>
+
+
+        <div class="control-group">
+
+      <label class="control-label"  for="user_type">User Type</label>
+      <div class="controls">
+        <input type="radio" name="user_type" value="Buyer" checked> Buyer </input> <br>
+        <input type="radio" name="user_type" value="Seller" checked> Seller</input><br>
+        <input type="radio" name="user_type" value="Admin" checked> Admin </input><br>
+
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="address">Address </label>
+    <div class="controls">
+        <textarea rows="3" id="address" name="address">
+        </textarea>
+      <p class="help-block">Please provide your residential address</p>
+    </div>
+    </div>
+
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="contact">Contact #</label>
+      <div class="controls">
+        <input type="text" id="contact" name="contact" placeholder="" class="input-xlarge">
+        <p class="help-block">Enter your Phone Number</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="control-label" for="email">E-mail</label>
+      <div class="controls">
+        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+        <p class="help-block">Please provide your E-mail address</p>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success">Register</button>
+      </div>
+    </div>
+</form>
+
+{% endblock %}
