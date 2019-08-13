@@ -54,7 +54,7 @@
 
 <div id="legend">
     <fieldset>
-        <legend class="">Welcome {{ user_name }} !! <br>
+        <legend class="">Welcome {{ user_name }} !  <br>
             {{ message }}
         </legend>
         <div class="navbar" id="menu">
@@ -85,9 +85,9 @@
     <p style="margin-left:5em;">Product's Type : {{ order['Type'] }}</p>
     <p style="margin-left:5em;">Product's Size  : {{ order['Size'] }}</p>
     <p style="margin-left:5em;">Product's Gender : {{ order['Gender'] }}</p>
-    <p style="margin-left:5em;">Product's Original Price : {{ order['Original_Price'] }}</p>
-    <p style="margin-left:5em;">Product's Rental Price  : {{ order['Rental_Price'] }}</p>
-    <p style="margin-left:5em;">Product's deposit amount: {{ order['Deposit'] }}</p>
+    <p style="margin-left:5em;">Product's Original Price(USD) : {{ order['Original_Price'] }}</p>
+    <p style="margin-left:5em;">Product's Rental Price(USD)  : {{ order['Rental_Price'] }}</p>
+    <p style="margin-left:5em;">Product's deposit amount(USD) : {{ order['Deposit'] }}</p>
     <a href="/ship_item/{{ order['Order_ID'] }}/{{ order['Item_ID'] }}/{{ user_name }}"> <button class="btn btn-success" style="margin-left:5em;"> Ship Item </button></a>
 
     {% endfor %}

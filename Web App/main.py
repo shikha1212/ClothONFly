@@ -121,7 +121,7 @@ def add_user():
         cursor.execute('SELECT * FROM Users where User_Name = %s', User_Name)
         result = cursor.fetchall()
         if len(result) > 0:
-            return render_template('login.html', message="Registration Failed !! This User Name is already in use. Please use a different User Name")
+            return render_template('register.html', message="Registration Failed !! This User Name is already in use. Please use a different User Name")
 
     with conn.cursor() as cursor:
         cursor.execute('Insert into Users(User_Name, Password,User_Type,First_Name,Last_Name,Email,Address,Phone_Num) values(%s,%s,%s,%s,%s,%s,%s,%s)',
@@ -161,7 +161,7 @@ def item_added(user_name):
                        (Brand_Name, Cloth_Type, Size, Gender, Original_Price, Rental_Price, Owner_ID, Location, Cloth_Image, Deposit, Available_From))
     conn.commit()
     conn.close()
-    return seller_home(user_name, message="Item added in inventory and will be available for renting from today")
+    return seller_home(user_name, message="The item is added in inventory and will be available for renting from today.")
 
 
 @app.route("/rent/item/<string:Item_ID>/<string:user_name>", methods = ['POST', 'GET'])
@@ -423,7 +423,7 @@ def orders_for_depositwithhold(user_name,message=''):
                                 i.Original_Price 'Original_Price',i.Rental_Price 'Rental_Price',i.Deposit 'Deposit'
                                 FROM Orders o JOIN Users u ON u.User_ID = o.User_ID JOIN Inventory_Items i on i.Item_ID = o.Item_ID 
                                 where i.Owner_ID = %s AND o.Order_Status != 'Return Not Received(Deposit Withheld)' AND
-                                o.Actual_Return_Date > o.Return_Date''',(user_id))
+                                (o.Actual_Return_Date > o.Return_Date OR (o.Actual_Return_Date is Null and o.Return_Date<%s)) ''',(user_id,date.today()))
 
         orders = cursor.fetchall()
         if len(orders) == 0:
@@ -450,7 +450,7 @@ def withhold_deposit(Order_ID,Item_ID,user_name):
 @app.route('/logout')
 def logout():
     response = Response()
-    response.headers.add('Cache-Control', 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0')
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     return home("Successfully Logged Out")
 
 
