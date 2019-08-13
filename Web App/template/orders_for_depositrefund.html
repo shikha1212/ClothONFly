@@ -2,61 +2,72 @@
 {% block content %}
 
 <style>
-   * {
-       box-sizing: border-box;
-   }
-   /* Add a black background color to the top navigation */
-   .navbar {
-       overflow: hidden;
-   }
-   /* Style the links inside the navigation bar */
-   .navbar {
-       box-shadow: 0 1px 1px 0 rgba(0,0,0,1.9);
-   }
-   .navbar a {
-       float: left;
-       display: block;
-       color: #000000;
-       text-align: right;
-       padding: 7px 40px;
-       text-decoration: none;
-       font-size: 17px;
-       font-family: Roboto;
-   }
-   /* Change the color of links on hover */
-   .navbar a:hover {
-       color: #BD4D04;
-   }
+     * {box-sizing: border-box;}
 
-   legend {
-  border: 1px solid #888;
-  border-right: 1px solid #666;
-  border-bottom: 1px solid #666;
-  padding: .5em;
-  background-color: #B6452C;
-}
+     /* Add a black background color to the top navigation */
+     .navbar {
+         overflow: hidden;
+     }
 
-body { padding-top: 70px;
-       background-color: #DDC5A2;
-       }
+     /* Style the links inside the navigation bar */
+     .navbar {
+         box-shadow: 0 1px 1px 0 rgba(0,0,0,1.9);
+     }
+
+     .navbar a {
+         float: left;
+         display: block;
+         color: #2D3033;
+         text-align: right;
+         padding: 5px 40px;
+         text-decoration: none;
+         font-size: 17px;
+         font-family: Roboto;
+     }
+
+     /* Change the color of links on hover */
+     .navbar a:hover {
+         color: #D35C37;
+     }
+
+     div.top {
+         text-align: center;
+         font-family: Roboto;
+     }
+
+     legend {
+         border: 1px solid #888;
+         border-right: 1px solid #666;
+         border-bottom: 1px solid #666;
+         padding: .5em;
+         background-color: #97B8C2;
+         font-family: Roboto;
+     }
+
+     body {
+         padding-top: 70px;
+         background-color: #D6C6B9;
+         font-family: Roboto;
+     }
 
 </style>
 
 <div id="legend">
-      <fieldset>
-      <legend class="">Welcome {{ user_name }} !! <br>
-          {{ message }}
-       </legend>
-<div class="navbar" id="menu">
-  <a href="/sellerhome/{{ user_name }}">Home</a>
-              <a href="/all_orders_for_seller/{{ user_name}}">All Orders</a>
-  <a href="/orders_for_shipment/{{ user_name}}">Orders Ready for Shipment</a>
-              <a href="/orders_for_depositrefund/{{ user_name}}">Orders for Refunding Deposit</a>
-              <a href="/orders_for_depositwithhold/{{ user_name}}">Orders for Withholding Deposit</a>
-    <a href="/logout">Sign Out</a>
-  </div>
-      </fieldset>
+    <fieldset>
+        <legend class="">Welcome {{ user_name }} !! <br>
+            {{ message }}
+        </legend>
+        <div class="navbar" id="menu">
+            <a href="/sellerhome/{{ user_name }}">Home</a>
+            <a href="/all_orders_for_seller/{{ user_name}}">All Orders</a>
+            <a href="/orders_for_shipment/{{ user_name}}">Orders Ready for Shipment</a>
+            <a href="/orders_for_depositrefund/{{ user_name}}">Orders for Refunding Deposit</a>
+            <a href="/orders_for_depositwithhold/{{ user_name}}">Orders for Withholding Deposit</a>
+            <a href="/logout">Sign Out</a>
+        </div>
+    </fieldset>
 </div>
+
 <div class="col-md-4" xmlns="http://www.w3.org/1999/html">
     {% for order in orders %}
      <h4 style="margin-left:5em;">Order ID : {{ order['Order_ID'] }} : {{ order['Order_Status'] }}</h4>
@@ -74,14 +85,11 @@ body { padding-top: 70px;
     <p style="margin-left:5em;">Product's Type : {{ order['Type'] }}</p>
     <p style="margin-left:5em;">Product's Size  : {{ order['Size'] }}</p>
     <p style="margin-left:5em;">Product's Gender : {{ order['Gender'] }}</p>
-    <p style="margin-left:5em;">Product's Original Price : {{ order['Original_Price'] }}</p>
-    <p style="margin-left:5em;">Product's Rental Price  : {{ order['Rental_Price'] }}</p>
-    <p style="margin-left:5em;">Product's deposit amount: {{ order['Deposit'] }}</p>
+    <p style="margin-left:5em;">Product's Original Price(USD) : {{ order['Original_Price'] }}</p>
+    <p style="margin-left:5em;">Product's Rental Price(USD) : {{ order['Rental_Price'] }}</p>
+    <p style="margin-left:5em;">Product's deposit amount(USD) : {{ order['Deposit'] }}</p>
     <a href="/refund_deposit/{{ order['Order_ID'] }}/{{ order['Item_ID'] }}/{{ user_name }}"> <button class="btn btn-success" style="margin-left:5em;"> Refund Deposit </button></a>
     <hr>
     {% endfor %}
 </div>
-
-
-
 {% endblock %}

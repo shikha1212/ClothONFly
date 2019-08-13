@@ -2,82 +2,87 @@
 {% block content %}
 
 <style>
-   * {
-       box-sizing: border-box;
-   }
-   /* Add a black background color to the top navigation */
-   .navbar {
-       overflow: hidden;
-   }
-   /* Style the links inside the navigation bar */
-   .navbar {
-       box-shadow: 0 1px 1px 0 rgba(0,0,0,1.9);
-   }
-   .navbar a {
-       float: left;
-       display: block;
-       color: #000000;
-       text-align: right;
-       padding: 7px 40px;
-       text-decoration: none;
-       font-size: 17px;
-       font-family: Roboto;
-   }
-   /* Change the color of links on hover */
-   .navbar a:hover {
-       color: #BD4D04;
-   }
+     * {box-sizing: border-box;}
 
-   legend {
-  border: 1px solid #888;
-  border-right: 1px solid #666;
-  border-bottom: 1px solid #666;
-  padding: .5em;
-  background-color: #B6452C;
-}
+     /* Add a black background color to the top navigation */
+     .navbar {
+         overflow: hidden;
+     }
 
-body { padding-top: 70px;
-       background-color: #DDC5A2;
-       }
+     /* Style the links inside the navigation bar */
+     .navbar {
+         box-shadow: 0 1px 1px 0 rgba(0,0,0,1.9);
+     }
+
+     .navbar a {
+         float: left;
+         display: block;
+         color: #2D3033;
+         text-align: right;
+         padding: 5px 40px;
+         text-decoration: none;
+         font-size: 17px;
+         font-family: Roboto;
+     }
+
+     /* Change the color of links on hover */
+     .navbar a:hover {
+         color: #D35C37;
+     }
+
+     div.top {
+         text-align: center;
+         font-family: Roboto;
+     }
+
+     legend {
+         border: 1px solid #888;
+         border-right: 1px solid #666;
+         border-bottom: 1px solid #666;
+         padding: .5em;
+         background-color: #97B8C2;
+         font-family: Roboto;
+     }
+
+     body {
+         padding-top: 70px;
+         background-color: #D6C6B9;
+         font-family: Roboto;
+     }
 
 </style>
 
 <div id="legend">
-      <fieldset>
-      <legend class="">Hello {{ user_name }} !! Enter the number days for which you want rent the selected item and click on the Calculate Price button to get the total price
-      </legend>
-          <div class="navbar" id="menu">
-  <a href="/buyerhome/{{ user_name }}">Home</a>
-  <a href="/Myorders/{{ user_name}}">My Orders</a>
-    <a href="/logout">Sign Out</a>
-  </div>
-      </fieldset>
+    <fieldset>
+        <legend class="">Hello {{ user_name }} !! Enter the number days for which you want rent the selected item and click on the Calculate Price button to get the total price
+        </legend>
+        <div class="navbar" id="menu">
+            <a href="/buyerhome/{{ user_name }}">Home</a>
+            <a href="/Myorders/{{ user_name}}">My Orders</a>
+            <a href="/logout">Sign Out</a>
+        </div>
+    </fieldset>
 </div>
 
 <div class="col-md-4" xmlns="http://www.w3.org/1999/html">
     {% for item in items %}
-<!--<img src="../static/images/{{ item['Item_ID'] }}.jpg" height="230" width="230" style="margin-left:5em;"/>-->
- <h4 style="margin-left:5em;"> Item ID : {{ item['Item_ID'] }} </h4>
-<p style="margin-left:5em;"> Brand Name : {{ item['Brand_Name'] }} </p>
-<p style="margin-left:5em;"> Original Price(USD) : {{ item['Original_Price'] }} </p>
-<p style="margin-left:5em;"> Rental Price(USD) : {{ item['Rental_Price'] }} </p>
-<p style="margin-left:5em;"> Deposit Amount (USD) : {{ item['Deposit'] }} </p>
-<p style="margin-left:5em;"> Size : {{ item['Size'] }} </p>
+    <h4 style="margin-left:5em;"> Item ID : {{ item['Item_ID'] }} </h4>
+    <p style="margin-left:5em;"> Brand Name : {{ item['Brand_Name'] }} </p>
+    <p style="margin-left:5em;"> Original Price(USD) : {{ item['Original_Price'] }} </p>
+    <p style="margin-left:5em;"> Rental Price(USD) : {{ item['Rental_Price'] }} </p>
+    <p style="margin-left:5em;"> Deposit Amount (USD) : {{ item['Deposit'] }} </p>
+    <p style="margin-left:5em;"> Size : {{ item['Size'] }} </p>
     <p style="margin-left:5em;"> Input the no. of days you want to rent this item</p>
+
     <form action="/calculate_price/{{ item['Item_ID'] }}/{{ user_name }}" method="POST">
-        <!--<input type="hidden" id="itemid" name ="itemid" value={{ item['Item_ID'] }} >-->
-        <!--<input type="hidden" id="username" name = "username" value= {{ user_name }} >-->
-    <input type="number"  style="margin-left:5em;" min="1" id="days" name="days" placeholder="1" /> <br>
-  <button class="btn btn-success" style="margin-left:5em;"> Calculate Price </button>
-    <button class="btn btn-success" disabled> Confirm Order </button>
-        </form>
+        <input type="number"  style="margin-left:5em;" min="1" id="days" name="days" placeholder="1" /> <br>
+        <button class="btn btn-success" style="margin-left:5em;"> Calculate Price </button>
+        <button class="btn btn-success" disabled> Confirm Order </button>
+    </form>
 
+    {% endfor %}
 
-
-        {% endfor %}
-
-        </div>
-
+</div>
 </form>
 
 {% endblock %}
