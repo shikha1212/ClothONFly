@@ -1,10 +1,54 @@
 {% extends "base.html" %}
 {% block content %}
+
+<style>
+   * {
+       box-sizing: border-box;
+   }
+   /* Add a black background color to the top navigation */
+   .navbar {
+       overflow: hidden;
+   }
+   /* Style the links inside the navigation bar */
+   .navbar {
+       box-shadow: 0 1px 1px 0 rgba(0,0,0,1.9);
+   }
+   .navbar a {
+       float: left;
+       display: block;
+       color: #000000;
+       text-align: right;
+       padding: 7px 40px;
+       text-decoration: none;
+       font-size: 17px;
+       font-family: Roboto;
+   }
+   /* Change the color of links on hover */
+   .navbar a:hover {
+       color: #BD4D04;
+   }
+   legend {
+        border: 1px solid #888;
+        border-right: 1px solid #666;
+        border-bottom: 1px solid #666;
+        padding: .5em;
+        background-color: #97B8C2;
+        font-family: Roboto;
+    }
+
+    body {
+        padding-top: 70px;
+        background-color: #D6C6B9;
+        font-family: Roboto;
+    }
+</style>
+
 <form class="form-horizontal" action='/login' method="POST" xmlns="http://www.w3.org/1999/html">
 
     <div id="legend">
       <fieldset>
-      <legend class="">Enter your credentials to Log In</legend>
+      <legend class=""> Welcome to ClothesOnFly ! <br>
+          {{ message}}</legend>
         </fieldset>
     </div>
     <div class="control-group">
@@ -26,10 +70,9 @@
     </div>
 
     <div class="control-group">
-        <input type="submit" name="action" class="btn btn-info" value="Log In" />
-        <input type="submit" name="action" class="btn btn-info" value="Sign Up" />
+     <input type="submit" name="action" class="btn btn-info" value="Log In" style="margin-left:12em;"/>
+    <input type="submit" name="action" class="btn btn-info" value="Sign Up"/>
     </div>
-
 </form>
 
 {% endblock %}

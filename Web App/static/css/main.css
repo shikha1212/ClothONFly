@@ -1,14 +1,13 @@
 
 legend {
-  font-weight: bold;
   border: 1px solid #888;
   border-right: 1px solid #666;
   border-bottom: 1px solid #666;
   padding: .5em;
-  background-color: #CCC;
+  background-color: #97B8C2;
 }
 
-
-body { padding-top: 70px; }
-
+body { padding-top: 70px;
+       background-color: #D6C6B9;
+       }
 

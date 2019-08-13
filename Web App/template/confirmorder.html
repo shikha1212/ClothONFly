@@ -1,40 +1,90 @@
 {% extends "base.html" %}
 {% block content %}
 
+<style>
+     * {box-sizing: border-box;}
+
+     /* Add a black background color to the top navigation */
+     .navbar {
+         overflow: hidden;
+     }
+
+     /* Style the links inside the navigation bar */
+     .navbar {
+         box-shadow: 0 1px 1px 0 rgba(0,0,0,1.9);
+     }
+
+     .navbar a {
+         float: left;
+         display: block;
+         color: #2D3033;
+         text-align: right;
+         padding: 5px 40px;
+         text-decoration: none;
+         font-size: 17px;
+         font-family: Roboto;
+     }
+
+     /* Change the color of links on hover */
+     .navbar a:hover {
+         color: #D35C37;
+     }
+
+     div.top {
+         text-align: center;
+         font-family: Roboto;
+     }
+
+     legend {
+         border: 1px solid #888;
+         border-right: 1px solid #666;
+         border-bottom: 1px solid #666;
+         padding: .5em;
+         background-color: #97B8C2;
+         font-family: Roboto;
+     }
+
+     body {
+         padding-top: 70px;
+         background-color: #D6C6B9;
+         font-family: Roboto;
+     }
+
+</style>
+
 <div id="legend">
-      <fieldset>
-      <legend class="">Hello {{ user_name }} !! Verify your order details and click confirm
-      </legend>
-      </fieldset>
+    <fieldset>
+        <legend class="">Hello {{ user_name }} ! Verify your order details and click confirm</legend>
+        <div class="navbar" id="menu">
+            <a href="/buyerhome/{{ user_name }}">Home</a>
+            <a href="/Myorders/{{ user_name}}">My Orders</a>
+            <a href="/logout">Sign Out</a>
+        </div>
+    </fieldset>
 </div>
 
 <div class="col-md-4" xmlns="http://www.w3.org/1999/html">
     {% for item in items %}
-<img src="data:image/png;base64,'.base64_encode({{ item['Cloth_Image'] }})"/>
-<hidden>  <h4> {{item['Item_ID']}} </h4> </hidden>
-<h4> Brand Name : {{ item['Brand_Name'] }} </h4>
-<h4> Original Price(USD) : {{ item['Original_Price'] }} </h4>
-<h4> Rental Price(USD) : {{ item['Rental_Price'] }} </h4>
-<h4> Deposit Amount (USD) : {{ item['Deposit'] }} </h4>
-<h4> Size : {{ item['Size'] }} </h4>
-    <h4> Input the no. of days you want to rent this item :{{ days }} </h4>
-    <h4> Total price for renting this product for {{ days }} days is $ {{ total_price }} </h4>
+    <h4 style="margin-left:5em;"> Item ID : {{ item['Item_ID'] }} </h4>
+    <p style="margin-left:5em;"> Brand Name : {{ item['Brand_Name'] }} </p>
+    <p style="margin-left:5em;"> Original Price(USD) : {{ item['Original_Price'] }} </p>
+    <p style="margin-left:5em;"> Rental Price(USD) : {{ item['Rental_Price'] }} </p>
+    <p style="margin-left:5em;"> Deposit Amount (USD) : {{ item['Deposit'] }} </p>
+    <p style="margin-left:5em;"> Size : {{ item['Size'] }} </p>
+    <p style="margin-left:5em;"> Input the no. of days you want to rent this item :{{ days }} </p>
+    <p style="margin-left:5em;"> Total price for renting this product for {{ days }} days is $ {{ total_price }} </p> <br>
+
     <form action="/confirm_order/{{ item['Item_ID'] }}/{{ user_name }}/{{ days }}" method="POST">
-
-
-    <div class="control-group">
-      <!-- Username -->
-      <label class="control-label"  for="address">Address </label>
-    <div class="controls">
-        <textarea rows="3" id="address" name="address">
-        </textarea>
-      <p class="help-block">Please provide your shipping address</p>
-    </div>
-    </div>
-    <button class="btn btn-success" > Confirm Order </button>
-          {% endfor %}
+        <div class="control-group">
+            <!-- Address -->
+            <label class="control-label"  for="address" style="margin-left:5em;">Address </label>
+            <div class="controls">
+                <textarea rows="3" id="address" name="address" style="margin-left:5em;"></textarea>
+                <p class="help-block" style="margin-left:5em;">Please provide your shipping address</p>
+            </div>
+        </div>
+        <button class="btn btn-success" style="margin-left:5em;"> Confirm Order </button>
+        {% endfor %}
     </form>
 </div>
-
-
 {% endblock %}

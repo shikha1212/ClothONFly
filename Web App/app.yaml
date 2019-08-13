@@ -7,3 +7,4 @@ env_variables:
   CLOUD_SQL_DATABASE_NAME: ClothONFlyDB
   CLOUD_SQL_CONNECTION_NAME: cloth-on-fly:us-central1:clothonflydb
 # [END gae_python37_cloudsql_config]
+

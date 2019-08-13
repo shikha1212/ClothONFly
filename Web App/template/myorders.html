@@ -54,7 +54,9 @@
 
 <div id="legend">
     <fieldset>
-        <legend class="">Hello {{ user_name }} !! Enter the number days for which you want rent the selected item and click on the Calculate Price button to get the total price
+        <legend class="">Welcome {{ user_name }} !! <br>
+            {{ message }}
+            {{ message1 }}
         </legend>
         <div class="navbar" id="menu">
             <a href="/buyerhome/{{ user_name }}">Home</a>
@@ -65,24 +67,17 @@
 </div>
 
 <div class="col-md-4" xmlns="http://www.w3.org/1999/html">
-    {% for item in items %}
-    <h4 style="margin-left:5em;"> Item ID : {{ item['Item_ID'] }} </h4>
-    <p style="margin-left:5em;"> Brand Name : {{ item['Brand_Name'] }} </p>
-    <p style="margin-left:5em;"> Original Price(USD) : {{ item['Original_Price'] }} </p>
-    <p style="margin-left:5em;"> Rental Price(USD) : {{ item['Rental_Price'] }} </p>
-    <p style="margin-left:5em;"> Deposit Amount (USD) : {{ item['Deposit'] }} </p>
-    <p style="margin-left:5em;"> Size : {{ item['Size'] }} </p>
-    <p style="margin-left:5em;"> Input the no. of days you want to rent this item</p>
-
-    <form action="/calculate_price/{{ item['Item_ID'] }}/{{ user_name }}" method="POST">
-        <input type="number"  style="margin-left:5em;" min="1" id="days" name="days" placeholder="1" /> <br>
-        <button class="btn btn-success" style="margin-left:5em;"> Calculate Price </button>
-        <button class="btn btn-success" disabled> Confirm Order </button>
-    </form>
-
+    {% for order in orders %}
+    <h4 style="margin-left:5em;">Order ID : {{ order['Order_ID'] }}</h4>
+    <p style="margin-left:5em;">Order Status : {{ order['Order_Status'] }}</p>
+    <p style="margin-left:5em;"> Item ID : {{ order['Item_ID'] }} </p>
+    <p style="margin-left:5em;">Delivery Date : {{ order['Delivery_Date'] }}</p>
+    <p style="margin-left:5em;">Return Date : {{ order['Return_Date'] }}</p>
+    <p style="margin-left:5em;">Actual Return Date : {{ order['Actual_Return_Date'] }}</p>
+    <p style="margin-left:5em;">Shipping_Address : {{ order['Shipping_Address'] }}</p>
+    <p style="margin-left:5em;">Shipping_Date : {{ order['Shipping_Date'] }}</p>
+    <a href="/return_item/{{ order['Order_ID'] }}/{{ order['Item_ID'] }}/{{ user_name }}"> <button class="btn btn-success" style="margin-left:5em;"> Return Item </button></a>
+    <hr>
     {% endfor %}
-
 </div>
-</form>
-
 {% endblock %}
