@@ -75,7 +75,7 @@
     <p style="margin-left:5em;"> Input the no. of days you want to rent this item</p>
 
     <form action="/calculate_price/{{ item['Item_ID'] }}/{{ user_name }}" method="POST">
-        <input type="number"  style="margin-left:5em;" min="1" id="days" name="days" placeholder="1" /> <br>
+        <input type="number"  style="margin-left:5em;" min="1" id="days" name="days" placeholder="1" required/> <br>
         <button class="btn btn-success" style="margin-left:5em;"> Calculate Price </button>
         <button class="btn btn-success" disabled> Confirm Order </button>
     </form>
