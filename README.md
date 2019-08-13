@@ -1,5 +1,6 @@
 # ClothONFly
 Rental clothing application
+http://cloth-on-fly.appspot.com/
 
 Narrative: 
 ClothONFLY is a clothing rental platform. ClothONFLY lets you rent clothes at a fraction of their original price.
