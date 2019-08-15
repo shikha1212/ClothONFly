@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form class="form-horizontal" action='/itemadded/{{ user_name }}' method="POST" xmlns="http://www.w3.org/1999/html">
+<form action = "http://cloth-on-fly.appspot.com/uploader/{{ user_name }}" method = "POST"
+enctype = "multipart/form-data">
+
     <style>
         * {box-sizing: border-box;}
 
@@ -147,19 +149,29 @@
         </div>
     </div>
 
+    <!--<div class="control-group">-->
+        <!--&lt;!&ndash; Image &ndash;&gt;-->
+        <!--<label class="control-label" for="image">Image </label>-->
+        <!--<div class="controls">-->
+            <!--<input type="file" id="image" name="image" placeholder="" class="input-xlarge" required>-->
+            <!--<p class="help-block">Upload the image of the item here</p>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
     <div class="control-group">
-        <!-- Image -->
-        <label class="control-label" for="image">Image </label>
-        <div class="controls">
-            <input type="file" id="image" name="image" placeholder="" class="input-xlarge" required>
-            <p class="help-block">Upload the image of the item here</p>
-        </div>
+      <!-- Image -->
+      <!--<label class="control-label" for="file">Image </label>-->
+      <div class="controls">
+        <input type="file" id="file" name="file" placeholder="" >
+        <p class="help-block">Upload the image of the item here</p>
+      </div>
     </div>
 
     <div class="control-group">
         <!-- Button -->
         <div class="controls">
-            <button class="btn btn-success">Submit</button>
+            <button class="btn btn-success">Next</button>
         </div>
     </div>
 

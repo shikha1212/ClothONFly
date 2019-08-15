@@ -15,7 +15,11 @@
 # [START gae_python37_cloudsql_mysql]
 # add1
 import os
-from flask import Flask, request, render_template, Response, send_from_directory
+from flask import Flask, jsonify, session, redirect, url_for, escape, render_template, request, send_file, Response,send_from_directory,logging
+from google.cloud import storage
+from google.cloud.storage import Blob
+from werkzeug.utils import secure_filename
+import io
 from datetime import date, datetime, timedelta
 
 import pymysql
@@ -133,9 +137,8 @@ def add_user():
 
 
 
-@app.route("/itemadded/<string:user_name>", methods = ['POST','GET'])
-def item_added(user_name):
-    user_name = user_name
+@app.route("/uploader/<string:user_name>", methods = ['POST','GET'])
+def upload(user_name):
 
     Brand_Name = request.form['brand']
     Cloth_Type = request.form['type']
@@ -144,24 +147,43 @@ def item_added(user_name):
     Original_Price = request.form['original_price']
     Rental_Price = request.form['rental_price']
     Location = request.form['location']
-    Cloth_Image = request.form['image']
     Deposit = request.form['deposit']
     Available_From = date.today()
 
-    conn = db_connect()
+    if request.method == 'POST':
+        file = request.files['file']
 
-    with conn.cursor() as cursor:
-        cursor.execute('SELECT * from Users where User_Name = %s', (user_name))
-        users = cursor.fetchall()
-        for user in users:
-            Owner_ID = user['User_ID']
+    file_name = str(file.filename)
+    bucket_name = 'clothonfly_bucket'
+    client = storage.Client()
+    bucket = client.get_bucket(bucket_name)
+    blob = bucket.blob(secure_filename(file.filename))
+    try:
+        blob.upload_from_file(file.stream)
+        conn = db_connect()
 
-    with conn.cursor() as cursor:
-        cursor.execute('Insert into Inventory_Items(Brand_Name, Cloth_Type, Size, Gender, Original_Price, Rental_Price, Owner_ID, Location, Cloth_Image, Deposit, Available_From) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
-                       (Brand_Name, Cloth_Type, Size, Gender, Original_Price, Rental_Price, Owner_ID, Location, Cloth_Image, Deposit, Available_From))
-    conn.commit()
-    conn.close()
-    return seller_home(user_name, message="The item is added in inventory and will be available for renting from today.")
+        with conn.cursor() as cursor:
+            cursor.execute('SELECT * from Users where User_Name = %s', (user_name))
+            users = cursor.fetchall()
+            for user in users:
+                Owner_ID = user['User_ID']
+
+        with conn.cursor() as cursor:
+            cursor.execute(
+                'Insert into Inventory_Items(Brand_Name, Cloth_Type, Size, Gender, Original_Price, Rental_Price, Owner_ID, Location, Cloth_Image, Deposit, Available_From) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
+                (Brand_Name, Cloth_Type, Size, Gender, Original_Price, Rental_Price, Owner_ID, Location, file_name,
+                 Deposit, Available_From))
+        conn.commit()
+        conn.close()
+        return seller_home(user_name,
+                           message="The item is added in inventory and will be available for renting from today.")
+
+
+    except Exception as e:
+        logging.exception(e)
+        return jsonify({"success": False})
+
+
 
 
 @app.route("/rent/item/<string:Item_ID>/<string:user_name>", methods = ['POST', 'GET'])
@@ -501,40 +523,65 @@ def remove_item(user_name):
 
 
 
-#
-#
-# @app.route("/upload/<string:user_name>", methods=["POST"])
-# def upload(user_name):
+
+
+# @app.route("/uploader/<string:user_name>", methods=["POST"])
+# def uploading(user_name):
 #     user_name = user_name
-#     # Cloth_Image = request.form['image']
 #
-#     target = os.path.join(APP_ROOT, 'static/images')
-#     # if not os.path.isdir(target):
-#     #     os.mkdir(target)
-#     upload = request.files['image']
+#     if request.method == 'POST':
+#         file = request.files['file']
 #
-#     f = upload.filename
+#     file_name = str(file.filename)
+#     bucket_name = 'clothonfly_bucket'
+#     client = storage.Client()
+#     bucket = client.get_bucket(bucket_name)
+#     blob = bucket.blob(secure_filename(file.filename))
+#     try:
+#         blob.upload_from_file(file.stream)
+#         return item_added(user_name = user_name, filename = file_name)
+#         # return jsonify({"success": True})
 #
-#         # # # This is to verify files are supported
-#         # # ext = os.path.splitext(filename)[1]
-#         # # if (ext == ".jpg") or (ext == ".png"):
-#         # #     print("File supported moving on...")
-#         # # else:
-#         # #     return"Files uploaded are not supported..."
-#     destination = "/".join([target, f])
-#         # print("Accept incoming file:", filename)
-#         # print("Save it to:", destination)
-#     upload.save(destination)
+#     except Exception as e:
+#         logging.exception(e)
+#         return jsonify({"success": False})
+
+
 #
-#
-#     return ("added" )
-#
-#
-# @app.route("/upload_image/<string:user_name>", methods=["POST"])
+# @app.route("/upload_image/<string:user_name>/", methods=["POST"])
 # def upload_image(user_name):
 #     user_name = user_name
 #
+#     Password = request.form['password']
+#     User_Type = request.form['user_type']
+#     First_Name = request.form['first_name']
+#     Last_Name = request.form['last_name']
+#     Email = request.form['email']
+#     Address = request.form['address']
+#     Phone_Num = request.form['contact']
+#
 #     return render_template("upload_image.html",user_name=user_name)
+
+
+
+@app.route('/look/<filename>')
+def flook(filename):
+
+    filename=filename
+    try:
+        # Reformat the filename using the bucket name fetched above
+        bucket_name = 'clothonfly_bucket'
+        client = storage.Client()
+        bucket = client.get_bucket(bucket_name)
+        blob = bucket.blob(secure_filename(filename))
+        data = blob.download_as_string()
+        extension = secure_filename(filename).rsplit('.', 1)[1]
+        if extension == "png":
+            return send_file(io.BytesIO(data), attachment_filename=filename, mimetype='image/png')
+        else:
+            return data
+    except Exception as e:
+        return jsonify({'error': 'Could not find file {}'.format(filename)})
 
 
 if __name__ == '__main__':
