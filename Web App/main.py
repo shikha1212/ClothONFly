@@ -584,6 +584,159 @@ def flook(filename):
         return jsonify({'error': 'Could not find file {}'.format(filename)})
 
 
+@app.route("/validate_user", methods = ['POST', 'GET'])
+def validate_user():
+    # return jsonify(role=True)
+    content = request.get_json()
+    # return content
+    conn = db_connect()
+    user_name = content['username']
+    Password = content['password']
+
+    # user_name = username
+    # Password = password
+
+    with conn.cursor() as cursor:
+        cursor.execute('SELECT * FROM Users where User_Name = %s AND Password = %s', (user_name, Password))
+        result = cursor.fetchall()
+        if len(result) == 1:
+            for row in result:
+                role = row['User_Type']
+                conn.close()
+
+                if role == 'Buyer':
+                        return jsonify(auth_success = True,role ="Buyer")
+
+                elif role == 'Seller':
+                    return jsonify(auth_success = True,role ="Seller")
+                elif role == 'Admin':
+                    return jsonify(auth_success = True,role ="Admin")
+        else:
+            return jsonify(auth_success = False)
+
+
+@app.route("/android_buyer_home", methods = ['POST', 'GET'])
+def android_buyer_home():
+    conn = db_connect()
+    with conn.cursor() as cursor:
+        cursor.execute('Select * from Inventory_Items where Available_From <= %s', date.today())
+        items = cursor.fetchall()
+    conn.close()
+    return jsonify(items)
+
+
+@app.route("/android_calculate_price", methods = ['POST', 'GET'])
+def android_calculate_price():
+    # return jsonify(role=True)
+    content = request.get_json()
+    # return content
+    conn = db_connect()
+    Item_ID = content['item_id']
+    days = content['days']
+
+    with conn.cursor() as cursor:
+        cursor.execute('Select * from Inventory_Items where Item_ID= %s',Item_ID)
+        items = cursor.fetchall()
+        for item in items:
+            rental_price = float(item['Rental_Price'])
+            deposit = float(item['Deposit'])
+
+    total_price = deposit + (float(days) * rental_price)
+    conn.close()
+    price = str(total_price)
+    return jsonify(price=price)
+
+
+@app.route("/android_place_order", methods = ['POST', 'GET'])
+def android_place_order():
+    # return jsonify(role=True)
+    content = request.get_json()
+    Item_ID = content['item_id']
+    user_name = content['user_name']
+    days = int(float(content['days']))
+    shipping_address = content['shippingaddress']
+
+    delivery_date = date.today() + timedelta(days=7)
+    days = int(days)
+    return_date = delivery_date + timedelta(days=days)
+    conn = db_connect()
+    with conn.cursor() as cursor:
+        cursor.execute('Select * from Users where user_name = %s', user_name)
+        items = cursor.fetchall()
+        for item in items:
+            User_ID = item['User_ID']
+            conn.close()
+
+    conn = db_connect()
+    with conn.cursor() as cursor:
+        cursor.execute(
+            'INSERT INTO Orders(User_ID, Item_ID, Delivery_Date, Return_Date, Shipping_Address, Order_Status) VALUES(%s,%s,%s,%s,%s,%s)',
+            (User_ID, Item_ID, delivery_date, return_date, shipping_address, "Order Received(Shipment Pending)"))
+        conn.commit()
+        conn.close()
+
+    conn = db_connect()
+    with conn.cursor() as cursor:
+        cursor.execute('Update Inventory_Items set Available_From = NULL where Item_ID=%s ', Item_ID)
+        conn.commit()
+        conn.close()
+
+    conn = db_connect()
+    with conn.cursor() as cursor:
+        cursor.execute('SELECT * FROM Orders where User_Id = %s AND Item_ID = %s', (User_ID, Item_ID))
+        orders = cursor.fetchall()
+        for order in orders:
+            orderid = order['Order_ID']
+
+        conn.close()
+        return jsonify(order_id = orderid)
+
+
+
+@app.route("/android_signup", methods=['POST', 'GET'])
+def signup_user():
+    content = request.get_json()
+    conn = db_connect()
+    User_Name = content['user_name']
+    Password = content['password']
+    User_Type = "Buyer"
+    First_Name = content['first_name']
+    Last_Name = content['last_name']
+    Email = content['email']
+    Address = content['address']
+    Phone_Num = content['contact']
+    with conn.cursor() as cursor:
+        cursor.execute('SELECT * FROM Users where User_Name = %s', User_Name)
+        result = cursor.fetchall()
+        if len(result) > 0:
+            conn.close()
+            return jsonify(auth_success = False, message = "Failed")
+    with conn.cursor() as cursor:
+        cursor.execute('Insert into Users(User_Name, Password, User_Type, First_Name, Last_Name, Email, Address, Phone_Num) values(%s,%s,%s,%s,%s,%s,%s,%s)',
+                       (User_Name, Password, User_Type, First_Name, Last_Name, Email, Address, Phone_Num))
+        conn.commit()
+        conn.close()
+    return jsonify(auth_success = True, message = "Succeeded")
+
+
+@app.route('/android_myorders',methods = ['POST','GET'])
+def android_check_my_orders():
+    content = request.get_json()
+    conn = db_connect()
+    user_name = content['user_name']
+    with conn.cursor() as cursor:
+        cursor.execute('SELECT * from Users where User_Name = %s',user_name)
+        users = cursor.fetchall()
+        conn.close()
+    for user in users:
+        user_id = user['User_ID']
+    conn = db_connect()
+    with conn.cursor() as cursor:
+        cursor.execute('SELECT * from Orders where User_ID = %s', user_id)
+        orders = cursor.fetchall()
+        conn.close()
+    return jsonify(orders)
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
 

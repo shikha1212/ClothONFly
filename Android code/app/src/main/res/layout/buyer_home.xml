@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            tools:context=".BuyerHome">
+
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:orientation="vertical">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#97B8C2"
+            android:background="#97B8C2"
+            android:text="Items for Renting"/>
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="440dp"
+            android:id="@+id/items"/>
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/rent_button"
+            app:backgroundTint="#97B8C2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="Proceed"/>
+    <!--<com.google.android.material.button.MaterialButton-->
+            <!--android:id="@+id/refresh_button"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:text="Refresh"/>-->
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/myorders_button"
+            app:backgroundTint="#97B8C2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="My Order History"/>
+
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/logout_button"
+            app:backgroundTint="#97B8C2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="Log Out"/>
+
+    <!--</RelativeLayout>-->
+
+
+</LinearLayout>
+</ScrollView>

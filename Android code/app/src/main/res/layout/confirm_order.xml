@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="10dp"
+              android:orientation="vertical">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#97B8C2"
+            android:background="#97B8C2"
+            android:text="Confirm Your Order"/>
+
+    <LinearLayout
+            android:id = "@+id/layout"
+            android:layout_width="411dp"
+            android:layout_height="715dp"
+            android:background="#D6C6B9"
+            android:orientation="vertical">
+        <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:id="@+id/imageView2"/>-->
+
+        <ImageView
+                android:layout_width="294dp"
+                android:layout_height="182dp" android:id="@+id/imageView2" tools:src="@mipmap/ic_launcher"/>
+
+        <TextView
+                android:text="Item ID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView5"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:text="Item"
+                android:id="@+id/itemid"/>
+        <!--<TextView-->
+                <!--android:id="@+id/order_status"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="#fff"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text="Order Status"/>-->
+
+        <!--<TextView-->
+                <!--android:id="@+id/brand"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="#fff"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text="Brand"/>-->
+
+        <!--<TextView-->
+                <!--android:id="@+id/size"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="#fff"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text="Size"/>-->
+        <!--<TextView-->
+                <!--android:id="@+id/original_price"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="#fff"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text="Original Price"/>-->
+        <!--<TextView-->
+                <!--android:id="@+id/rental_price"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="#fff"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text="Rental Price"/>-->
+        <!--<TextView-->
+                <!--android:id="@+id/deposit"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="#fff"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text="Deposit"/>-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/days"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="#fff"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:text="Input no. of days forr "/>-->
+
+
+
+        <TextView
+        android:text="Enter the number of days you want to rent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:id="@+id/textView2"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/days"/>
+
+
+
+        <!--<TextView-->
+                <!--android:text="Enter your shipping address"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" android:id="@+id/textView3"/>-->
+        <!--<EditText-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:inputType="textPostalAddress"-->
+                <!--android:text="Enter your address here ..."-->
+                <!--android:ems="10"-->
+                <!--android:id="@+id/address"/>-->
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_calculate_price"
+                app:backgroundTint="#97B8C2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Calculate Price"/>
+
+
+        <TextView
+                android:text="Your total price will be: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView3"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="$$"
+                android:ems="10"
+                android:id="@+id/finalprice"/>
+
+
+        <TextView
+        android:text="Enter your shipping address here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:id="@+id/textView4"/>
+        <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:text=""
+        android:ems="10"
+        android:id="@+id/address"/>
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_place_order"
+                app:backgroundTint="#97B8C2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Confirm Order"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel_order"
+                app:backgroundTint="#97B8C2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Cancle Order"/>
+
+    </LinearLayout>
+
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#cc5500"/>
+
+</LinearLayout>
+
+
+
+
