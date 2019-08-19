@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cloth On Fly</title>
+
+<style>
+
+     body{
+             padding-top: 70px;
+             background-color: #D6C6B9;
+             font-family: Roboto;
+         }
+
+         p {
+             margin: 35px;
+         }
+
+
+     /* Accordion with Symbol */
+     button.accordion {
+         background-color: #eee;
+         color: #BD4D04;
+         cursor: pointer;
+         padding: 40px;
+         width: 100%;
+         border: none;
+         text-align: left;
+         outline: none;
+         font-size: 20px;
+         transition: 0.4s;
+         font-family: Roboto;
+     }
+
+     button.accordion.active, button.accordion:hover {
+         background-color: #D9C8B6;
+     }
+
+     button.accordion:after {
+         content: '\002B';
+         color: #BD4D04;
+         font-weight: bold;
+         float: right;
+         margin-left: 5px;
+     }
+
+     button.accordion.active:after {
+         content: "\2212";
+     }
+
+     div.panel {
+         padding: 0 18px;
+         background-color: #D9C8B6;
+         max-height: 0;
+         overflow: hidden;
+         transition: max-height 0.2s ease-out;
+     }
+
+    /*Style for Content*/
+    table {
+        font-family: Roboto;
+    }
+
+    div.panel p{
+        font-family: Roboto;
+        font-size: 18px;
+    }
+</style>
+
+<body>
+
+<div class="top">
+
+   <h2 align="center"> Welcome to Cloth On Fly! </h2>
+   <h4 align = "center">
+       ClothONFLY is a clothing rental platform.  <br>
+       ClothONFLY has a website platform for all users; <br>
+       Android App platform for buyers. <br>
+       We let buyers rent clothes at a fraction of their original price. <br>
+       We also let sellers put their clothes for renting  </h4>
+</div>
+
+<button class="accordion"> Things of Interest </button>
+<div class="panel">
+    <p>
+       1.  Buyer – A buyer can rent any available item from the platform by paying a deposit amount plus the rental price <br>
+       2.  Seller – A seller can add their clothing items on the platform for renting.<br>
+       3.  Admins - Admin manages the site <br>
+       4.  Clothing Items – These are the items that available for renting <br>
+       5.  Order – These are the orders placed by the buyers <br>
+    </p>
+</div>
+
+<button class="accordion"> Business Rules </button>
+<div class="panel">
+    <p>
+       1.    Any user can register as a buyer or seller on the website platform <br>
+       2.    Clothing Items are available from the date they are added on the system <br>
+       3.    Delivery Date of all rented items will be Current Date plus 7 days <br>
+       4.    Clothing item that has been rented out will not be available for renting till returned<br>
+       5.    Every clothing item will have a deposit amount and rental price per day as decided by the seller.<br>
+       6.    A buyer can rent any available item by paying the deposit amount plus the rental price (rental price per day * no. of days for which the item is rented).<br>
+           a)    The buyer has to enter a return date by when he/she will return the product back to seller.<br>
+           b)    The buyer has to return the item by the return date he has specified in the order, failing to do so will let the seller withhold the deposit paid by the user.<br>
+           c)    If the item is returned by the return date, the seller refunds the deposit amount and item is available for renting again<br>
+   </p>
+</div>
+
+
+<button class="accordion"> Web App Introduction </button>
+
+<div class="panel">
+
+    <h4> How to Navigate through our web application? </h4>
+    <a href="https://cloth-on-fly.appspot.com"> Click here to access Cloth On Fly </a>
+
+    <br>
+    <h4>As a Seller </h4>
+    <p>
+        1.	Register <br> <br>
+        <img src = "../static/images/1.png" width="1000" height="500" border="2px solid black"><br> <br>
+        <img src = "../static/images/2.png" width="1000" height="500" border="2px solid black"><br> <br>
+        <img src = "../static/images/3.png" width="1000" height="500" border="2px solid black"><br> <br>
+
+        2. Login <br> <br>
+        <img src = "../static/images/4.png" width="1000" height="500" border="2px solid black"><br> <br>
+
+        3. Login Successful – Redirect to Seller Home Page <br> <br>
+        <img src = "../static/images/5.png" width="1000" height="500" border="2px solid black"><br> <br>
+
+        4. Add a new item for renting <br> <br>
+        <img src = "../static/images/6.png" width="1000" height="500" border="2px solid black"><br> <br>
+        <img src = "../static/images/7.png" width="1000" height="500" border="2px solid black"><br> <br>
+
+        5. View all orders <br> <br>
+        <img src = "../static/images/8.png" width="1000" height="500" border="2px solid black"><br> <br>
+
+        6. View all orders ready for shipment <br> <br>
+        <img src = "../static/images/9.png" width="1000" height="500" border="2px solid black"><br> <br>
+
+        7. View all orders for which deposit has to be refunded  <br> <br>
+        <img src = "../static/images/10.png" width="1000" height="500" border="2px solid black"><br> <br>
+
+        8. View all orders for which deposit has to be withheld <br> <br>
+        <img src = "../static/images/11.png" width="1000" height="500" border="2px solid black"><br> <br>
+
+        9. Ship an item <br> <br>
+        <img src = "../static/images/12.png" width="1000" height="500" border="2px solid black"><br> <br>
+
+        10.	Refund deposit <br> <br>
+        <img src = "../static/images/13.png" width="1000" height="500" border="2px solid black"><br> <br>
+
+        11.	Withhold deposit <br> <br>
+        <img src = "../static/images/14.png" width="1000" height="500" border="2px solid black"><br> <br>
+
+        12.	Logout <br> <br>
+        <img src = "../static/images/15.png" width="1000" height="500" border="2px solid black"><br> <br>
+    </p>
+
+        <h4>As a Buyer </h4>
+    <p>
+        1.	Register <br> <br>
+        <img src = "../static/images/16.png" width="1000" height="500" border="2px solid black"><br> <br>
+
+        2.	View all items available for renting <br> <br>
+        <img src = "../static/images/17.png" width="1000" height="500" border="2px solid black"><br> <br>
+        <img src = "../static/images/18.png" width="1000" height="500" border="2px solid black"><br> <br>
+
+        3.	Rent an item <br> <br>
+        3.1.	Select item for rent and click rent button<br> <br>
+        <img src = "../static/images/19.png" width="1000" height="500" border="2px solid black"><br> <br>
+        3.2.	Input days of rent and calculate price <br> <br>
+        <img src = "../static/images/20.png" width="1000" height="500" border="2px solid black"><br> <br>
+        3.3.	Enter shipping address and confirm order <br> <br>
+        <img src = "../static/images/21.png" width="1000" height="500" border="2px solid black"><br> <br>
+     </p>
+
+        4.	View all orders for buyer <br> <br>
+        <img src = "../static/images/22.png" width="1000" height="500" border="2px solid black"><br> <br>
+        5.	Return item <br> <br>
+        5.1. If the order status is not “Item Shipped”, the item is not eligible for return<br> <br>
+        <img src = "../static/images/23.png" width="1000" height="500" border="2px solid black"><br> <br>
+        5.2. Once the order has been shipped by seller, the buyer can return it  <br> <br>
+        <img src = "../static/images/24.png" width="1000" height="500" border="2px solid black"><br> <br>
+        <img src = "../static/images/25.png" width="1000" height="500" border="2px solid black"><br> <br>
+    </p>
+
+    <br>
+    <h4>As an Admin </h4>
+    <p>
+        1.	Admin Home Page <br> <br>
+        <img src = "../static/images/26.png" width="1000" height="500" border="2px solid black"><br> <br>
+        2.	Remove a user from the system <br> <br>
+         <img src = "../static/images/26.png" width="1000" height="500" border="2px solid black"><br> <br>
+        3.	Remove an item from the system <br><br>
+         <img src = "../static/images/26.png" width="1000" height="500" border="2px solid black"><br> <br>
+    </p>
+
+</div>
+
+<button class="accordion"> Android App Introduction </button>
+
+<div class="panel">
+
+    <h4> Access the following link with you Android Phone to try on our Cloth On Fly App </h4>
+    <a href="https://storage.cloud.google.com/clothonfly_bucket/app-debug.apk"> Click here to download Cloth On Fly App</a>
+
+    <br>
+    <p>
+        1.	Login <br> <br>
+        <img src = "../static/images/login%20with%20info.jpg" width="500" height="1000" border="2px solid black"><br> <br>
+
+        2. Signup <br> <br>
+        <img src = "../static/images/Register.jpg" width="500" height="1000" border="2px solid black"><br> <br>
+
+        3. Login Successful – Redirect to Home Page (Buyer) <br> <br>
+        <img src = "../static/images/buyerhome.jpg" width="500" height="1000" border="2px solid black"><br> <br>
+
+        4. Select an item and Click Proceed <br> <br>
+        <img src = "../static/images/Rent%20Item.jpg" width="500" height="1000" border="2px solid black"><br> <br>
+
+        5. Fill in the days you want to rent and Calculate price; also input address information to rent <br> <br>
+        <img src = "../static/images/rent%20with%20info.jpg" width="500" height="1000" border="2px solid black"><br> <br>
+
+        6. Rental Complete <br> <br>
+        <img src = "../static/images/rental%20complete.jpg" width="500" height="1000" border="2px solid black"><br> <br>
+
+        7. Refresh the page after seller shipped the item out  <br> <br>
+        <img src = "../static/images/rental%20situation%20after%20shipped.jpg" width="500" height="1000" border="2px solid black"><br> <br>
+
+        8. Return item <br> <br>
+        <img src = "../static/images/returned.jpg" width="500" height="1000" border="2px solid black"><br> <br>
+
+        9. Log out you will go back to the main page <br> <br>
+        <img src = "../static/images/login.jpg" width="500" height="1000" border="2px solid black"><br> <br>
+
+    </p>
+
+</div>
+
+<button class="accordion"> Meet the Team </button>
+<div class="panel">
+
+    <a href="https://github.com/shikha1212/ClothONFly/tree/shikha"> Click here to access Cloth On Fly github </a>
+
+    <table cellpadding="20">
+		<col width = "50%">
+		<col width = "30%">
+		<tr>
+			<th>Tianyi (Kelly) Zhang</th>
+			<th>Shikha Singh</th>
+		</tr>
+		<tr>
+			<td align="center"><img src="../static/images/Kelly.jpg" width="500" height="500"></td>
+			<td align="center"><img src="../static/images/Shikha.jpg" width="500" height="500"></td>
+			</td>
+		</tr>
+	</table>
+
+</div>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
