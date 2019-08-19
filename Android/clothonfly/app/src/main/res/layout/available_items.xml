@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="10dp"
+              android:orientation="vertical">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/item_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:paddingLeft="10dp"
+                android:text="Item ID" />
+        <TextView
+                android:id="@+id/rental_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:gravity="center_vertical"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:paddingLeft="10dp"
+                android:text="Rental Price" />
+
+        <EditText
+                android:id="@+id/rent_days"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:background="#ffffff"
+                android:hint="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="5dp"/>
+
+
+        <EditText
+                android:id="@+id/shipping_address"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:background="#ffffff"
+                android:hint="123 Main St, Austin, TX 78758"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="5dp"/>
+
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/rent_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Rent This Item"/>
+
+    </LinearLayout>
+
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#cc5500"/>
+
+</LinearLayout>
+
+
+
