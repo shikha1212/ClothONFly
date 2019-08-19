@@ -4,9 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.ListView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.clothonfly.CustomAdapter
@@ -29,11 +26,11 @@ import org.json.JSONException
 import org.json.JSONObject
 import java.net.URL
 import java.util.ArrayList
-import android.widget.TextView
 import android.graphics.BitmapFactory
 import android.graphics.Bitmap
 import android.os.Handler
 import android.os.Looper
+import android.widget.*
 import kotlinx.android.synthetic.main.buyer_home.view.*
 import java.io.InputStream
 
@@ -80,7 +77,7 @@ class ConfirmOrder : Fragment() {
                 val gotresponse = calculate_price(item_id_var, days_var)
                 val json = JSONObject(gotresponse)
                 val totalprice = json.get("price").toString()
-                finalprice.setText(totalprice)
+                finalprice.setText(totalprice + " $")
                 Global.setprice(totalprice)
                 Global.setdays(days_var)
 
@@ -92,10 +89,17 @@ class ConfirmOrder : Fragment() {
                         val user_name = Global.getUserName()
                         var days = days.text.toString()
                         val shippingaddress = address.text.toString()
-                        val gotresponse = place_order(item_id_var, user_name, days, shippingaddress)
-                        val json = JSONObject(gotresponse)
-                        val order = json.get("order_id").toString()
-                        (activity as NavigationHost).navigateTo(MyOrders(), addToBackstack = false)
+                        if(shippingaddress.isEmpty()) {
+                            Toast.makeText(context, "Please enter shipping address! ", Toast.LENGTH_SHORT).show()
+                        }else{
+                            val gotresponse = place_order(item_id_var, user_name, days, shippingaddress)
+                            val json = JSONObject(gotresponse)
+                            val order = json.get("order_id").toString()
+                            (activity as NavigationHost).navigateTo(MyOrders(), addToBackstack = false)
+                        }
+
+
+
 
                     }
                 }

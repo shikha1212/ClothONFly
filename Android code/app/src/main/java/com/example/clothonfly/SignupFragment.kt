@@ -31,7 +31,7 @@ class SignupFragment : Fragment() {
         // Inflate the layout for this fragment - all element of the xml is accessible here
         val view = inflater.inflate(R.layout.signupfragement, container, false)
 
-        view.confirm_button.setOnClickListener {
+        view.confirm_btn.setOnClickListener {
             doAsync {
                 var user_name_var = user_name.text.toString()
                 var password_var = password.text.toString()
@@ -54,6 +54,9 @@ class SignupFragment : Fragment() {
             }
         }
 
+        view.cancel_btn.setOnClickListener {
+            (activity as NavigationHost).navigateTo(LoginFragment(), addToBackstack = false)
+        }
         return view
     }
 

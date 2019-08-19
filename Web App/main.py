@@ -64,6 +64,11 @@ def home(message=''):
     message=message
     return render_template('login.html',message=message)
 
+
+@app.route("/info")
+def info():
+    return render_template('AboutUs.html')
+
 @app.route("/login", methods = ['POST', 'GET'])
 def check_action():
     if request.form['action'] == "Log In":
@@ -736,6 +741,33 @@ def android_check_my_orders():
         orders = cursor.fetchall()
         conn.close()
     return jsonify(orders)
+
+@app.route('/android_return_item',methods = ['POST','GET'])
+def android_return_item():
+    content = request.get_json()
+    Order_ID = content['Order_ID']
+    Item_ID = content['Item_ID']
+    conn = db_connect()
+    with conn.cursor() as cursor:
+        cursor.execute('SELECT * from Orders where Order_ID = %s',Order_ID)
+        orders = cursor.fetchall()
+        conn.close()
+        for order in orders:
+            orderstatus = order['Order_Status']
+        if orderstatus == "Order Shipped":
+            conn = db_connect()
+            with conn.cursor() as cursor:
+                cursor.execute('Update Orders set Order_Status = "Order Returned",Actual_Return_Date=%s where Order_ID = %s',(date.today(),Order_ID))
+                conn.commit()
+                conn.close()
+                conn = db_connect()
+                with conn.cursor() as cursor:
+                    cursor.execute('Update Inventory_Items set Available_From = %s where Item_ID = %s',(date.today(),Item_ID))
+                    conn.commit()
+                    conn.close()
+            return jsonify(auth_success = True, message = "Succeeded")
+        else:
+            return jsonify(auth_success = False, message = "Failed")
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)

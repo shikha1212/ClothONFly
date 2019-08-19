@@ -18,9 +18,9 @@
             android:text="Confirm Your Order"/>
 
     <LinearLayout
-            android:id = "@+id/layout"
-            android:layout_width="411dp"
-            android:layout_height="715dp"
+            android:id="@+id/layout"
+            android:layout_width="392dp"
+            android:layout_height="673dp"
             android:background="#D6C6B9"
             android:orientation="vertical">
         <!--<ImageView-->
@@ -45,63 +45,63 @@
                 android:text="Item"
                 android:id="@+id/itemid"/>
         <!--<TextView-->
-                <!--android:id="@+id/order_status"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textColor="#fff"-->
-                <!--android:gravity="center_vertical"-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:paddingLeft="10dp"-->
-                <!--android:text="Order Status"/>-->
+        <!--android:id="@+id/order_status"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="#fff"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:text="Order Status"/>-->
 
         <!--<TextView-->
-                <!--android:id="@+id/brand"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textColor="#fff"-->
-                <!--android:gravity="center_vertical"-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:paddingLeft="10dp"-->
-                <!--android:text="Brand"/>-->
+        <!--android:id="@+id/brand"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="#fff"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:text="Brand"/>-->
 
         <!--<TextView-->
-                <!--android:id="@+id/size"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textColor="#fff"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:gravity="center_vertical"-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:paddingLeft="10dp"-->
-                <!--android:text="Size"/>-->
+        <!--android:id="@+id/size"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="#fff"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:text="Size"/>-->
         <!--<TextView-->
-                <!--android:id="@+id/original_price"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textColor="#fff"-->
-                <!--android:gravity="center_vertical"-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:paddingLeft="10dp"-->
-                <!--android:text="Original Price"/>-->
+        <!--android:id="@+id/original_price"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="#fff"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:text="Original Price"/>-->
         <!--<TextView-->
-                <!--android:id="@+id/rental_price"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textColor="#fff"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:gravity="center_vertical"-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:paddingLeft="10dp"-->
-                <!--android:text="Rental Price"/>-->
+        <!--android:id="@+id/rental_price"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="#fff"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:text="Rental Price"/>-->
         <!--<TextView-->
-                <!--android:id="@+id/deposit"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textColor="#fff"-->
-                <!--android:gravity="center_vertical"-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--android:paddingLeft="10dp"-->
-                <!--android:text="Deposit"/>-->
+        <!--android:id="@+id/deposit"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="#fff"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:text="Deposit"/>-->
 
         <!--<EditText-->
         <!--android:id="@+id/days"-->
@@ -114,11 +114,10 @@
         <!--android:text="Input no. of days forr "/>-->
 
 
-
         <TextView
-        android:text="Enter the number of days you want to rent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:id="@+id/textView2"/>
+                android:text="Enter the number of days you want to rent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView2"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -127,18 +126,17 @@
                 android:id="@+id/days"/>
 
 
-
         <!--<TextView-->
-                <!--android:text="Enter your shipping address"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content" android:id="@+id/textView3"/>-->
+        <!--android:text="Enter your shipping address"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" android:id="@+id/textView3"/>-->
         <!--<EditText-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:inputType="textPostalAddress"-->
-                <!--android:text="Enter your address here ..."-->
-                <!--android:ems="10"-->
-                <!--android:id="@+id/address"/>-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:inputType="textPostalAddress"-->
+        <!--android:text="Enter your address here ..."-->
+        <!--android:ems="10"-->
+        <!--android:id="@+id/address"/>-->
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_calculate_price"
@@ -164,16 +162,18 @@
 
 
         <TextView
-        android:text="Enter your shipping address here"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:id="@+id/textView4"/>
+                android:text="Enter your shipping address here"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView4"/>
         <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPostalAddress"
-        android:text=""
-        android:ems="10"
-        android:id="@+id/address"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:minLines="2"
+                android:lines="3"
+                android:text=""
+                android:ems="10"
+                android:id="@+id/address"/>
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_place_order"
                 app:backgroundTint="#97B8C2"

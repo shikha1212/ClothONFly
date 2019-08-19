@@ -100,9 +100,9 @@ class CustomAdapter(private val context: Context, private val itemsModelArrayLis
         }
 
         holder.item_id!!.text = "Item ID: " + itemsModelArrayList[position].getID()
-        holder.rental_price!!.text = "Rental Price: " + itemsModelArrayList[position].getRentalPrice()
-        holder.original_price!!.text = "Original Price: " + itemsModelArrayList[position].getOriginalPrice()
-        holder.deposit!!.text = "Deposit: " +itemsModelArrayList[position].getdeposit()
+        holder.rental_price!!.text = "Rental Price: " + itemsModelArrayList[position].getRentalPrice() + " $"
+        holder.original_price!!.text = "Original Price: " + itemsModelArrayList[position].getOriginalPrice() + " $"
+        holder.deposit!!.text = "Deposit: " +itemsModelArrayList[position].getdeposit() + " $"
         holder.brand!!.text = "Brand: " +itemsModelArrayList[position].getbrand()
         holder.size!!.text = "Size: " +itemsModelArrayList[position].getsize()
 //        val url =  "https://cloth-on-fly.appspot.com/look/27.png"

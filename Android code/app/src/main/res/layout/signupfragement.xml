@@ -32,22 +32,31 @@
     <!--android:layout_marginStart="8dp"/>-->
 
     <Button
-            android:id="@+id/confirm_button"
+            android:id="@+id/confirm_btn"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="412dp"
             android:layout_height="50dp"
-            android:layout_marginTop="604dp"
+            android:layout_marginTop="548dp"
             android:text="Confirm" app:backgroundTint="#97B8C2"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:cursorVisible="false" app:iconTint="#00FCFCFC"
+    />
+
+
+    <Button
+            android:id="@+id/cancel_btn"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="412dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="600dp"
+            android:text="Cancel" app:backgroundTint="#97B8C2"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:cursorVisible="false" app:iconTint="#00FCFCFC"/>
-
-
-
     <EditText
             android:id="@+id/user_name"
             android:layout_width="283dp"
             android:layout_height="60dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="44dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="Enter your username"
@@ -60,7 +69,7 @@
             android:id="@+id/password"
             android:layout_width="283dp"
             android:layout_height="60dp"
-            android:layout_marginTop="152dp"
+            android:layout_marginTop="116dp"
             android:ems="10"
             android:inputType="textPassword"
             android:hint="Enter your passowrd"
@@ -71,7 +80,7 @@
             android:id="@+id/firstname"
             android:layout_width="283dp"
             android:layout_height="60dp"
-            android:layout_marginTop="224dp"
+            android:layout_marginTop="188dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="John"
@@ -82,7 +91,7 @@
             android:id="@+id/lastname"
             android:layout_width="283dp"
             android:layout_height="60dp"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="256dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="Doe"
@@ -93,7 +102,7 @@
             android:id="@+id/email"
             android:layout_width="283dp"
             android:layout_height="60dp"
-            android:layout_marginTop="524dp"
+            android:layout_marginTop="476dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="JohnDoe@utexas.edu"
@@ -105,7 +114,7 @@
             android:id="@+id/address"
             android:layout_width="283dp"
             android:layout_height="60dp"
-            android:layout_marginTop="452dp"
+            android:layout_marginTop="404dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="123 Main Street, Austin, TX"
@@ -117,7 +126,7 @@
             android:id="@+id/phonenum"
             android:layout_width="283dp"
             android:layout_height="60dp"
-            android:layout_marginTop="372dp"
+            android:layout_marginTop="332dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="5123456789"
