@@ -1,16 +1,24 @@
 # ClothONFly
-Rental clothing application
+
+Introduction to Cloth ON Fly
+http://cloth-on-fly.appspot.com/info
+
+Cloth ON Fly WEB APP
 http://cloth-on-fly.appspot.com/
 
+Cloth ON Fly ANDROID APP .apk
+https://storage.cloud.google.com/clothonfly_bucket/app-debug.apk
+*Using android phone to click the link to download
+
 Narrative: 
-ClothONFLY is a clothing rental platform. ClothONFLY lets you rent clothes at a fraction of their original price.
+Cloth On Fly is a clothing rental platform.  Cloth On Fly has a website platform for all users; Android App platform for buyers. Cloth On Fly let buyers rent clothes at a fraction of their original price. Cloth On Fly also let sellers put their clothes for renting.
 
 Things of Interest:
-1.	Admins - Admin manages the site 
-2.	Seller – A seller can add their clothing items on the platform for renting.
-3.	Order – These are the orders placed by the buyers
-4.	Clothing Items – These are the items that available for renting
-5.	Buyer – A buyer can rent any available item from the platform by paying a deposit amount plus the rental price
+1. 	Buyer – A buyer can rent any available item from the platform by paying a deposit amount plus the rental price 
+2. 	Seller – A seller can add their clothing items on the platform for renting.
+3. 	Admins - Admin manages the site 
+4. 	Clothing Items – These are the items that available for renting 
+5.	Order – These are the orders placed by the buyers 
 
 Business Rules:
 1.	An admin will authorize sellers on the platform
@@ -23,8 +31,6 @@ Business Rules:
 a)	The buyer has to enter a return date by when he/she will return the product back to seller. 
 b)	The buyer has to return the item by the return date he has specified in the order, failing to do so will let the seller withhold the deposit paid by the user.
 c)	If the item is returned by the return date, the seller refunds the deposit amount and item is available for renting again
-
-
 
 Operations:
 1.	Buyer Registration
