@@ -1,0 +1,198 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:2:1-23:12
+MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/a309dd56ddbd347d7eef3dcfd2ca28af/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0-alpha02] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/0e31c5aad8fbb11b4457a427eff241a4/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/011acb6267142885cd243197e392758f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.0.2] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/72cc53fd7b9a8439d30b3e4dbe30a8b2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/668984cf22768c143f4a65dd6e537259/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.volley:volley:1.1.1] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/6e571f6c448d3392293334eeb46b56a6/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5a41b48a809af5810a965c9f56f2cbaa/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/21fcb96cae8d0d86b0c475e8179bd8f3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/dbdd5e1c32b54e0a153b2672edc57667/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/4fa6765ab7d184980591a50511e014c1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/a1d82f6f3bcae3427277e52f81feb567/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-alpha01] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/c10f3f1d3031de12cbc7842fc521f697/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/47a7c86cc797907dae57cef5b9a673d8/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.1] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/da576e0c4d6956606a1bfd064513e2a4/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0-alpha01] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5aa37610548a8980e829a7df6c88a98c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/c2967264b619fd894f7ec822b68bf6fd/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/3a5130fb552f38159e4ad489dd2325fa/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5d2c1b1a1f6c4429c1a7a03bdc0ecded/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.1.0-alpha05] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/f76f5978e2c35cafa0b32735d932d6be/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/013871bee25884398f897d33d360e0d9/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/80fc91a9a4f9e2226bc29c776f1dab40/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/bd8a924dfef21938465c9b82d1d6338b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/14d978eb934dd3804d5f8fafc47e13df/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/e49c0b1e520010f4c17303ec11f68ea3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/33d3c7d7331c9d9a8cd9b95ffbd45ebc/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/7f9951fea501173b0d3e805f77b522ac/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/6e01f7d02ec86d28e24a0b5a287a5d28/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/7d2474601494aee0a1ce410f086ad2de/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/4d4cafc1fc93665a6cc1f8090e1d2ee5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/a65b38eadc602258ab4aa94fdb095a67/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0-alpha05] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/2bd1294cf93ef1b3c2070bd06ba3447c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0-alpha05] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/1cc9f955f57ec857f35dca0f8e5a5c9d/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-alpha02] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5ebd749fc8b2d64c4b937282198e048b/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/17fbc656963bfa1b7c2ad8e440b90148/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/d251f65fe30d9a9de42cb7366fa96d82/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/e52a844425608ac4ee8cd9742f5c913c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/25ecc9a87a98db0226f85200bb1306ed/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0-alpha02] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/3e6ce8cdd86ab266d1c9dbb707a536f2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/50b9f151caed83a3e3cadc038880471d/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:2:1-23:12
+	package
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:3:11-43
+		INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:2:1-23:12
+		INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:2:1-23:12
+		INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:5:22-64
+application
+ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:7:5-21:19
+MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/a309dd56ddbd347d7eef3dcfd2ca28af/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/a309dd56ddbd347d7eef3dcfd2ca28af/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/668984cf22768c143f4a65dd6e537259/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/668984cf22768c143f4a65dd6e537259/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/6e571f6c448d3392293334eeb46b56a6/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/6e571f6c448d3392293334eeb46b56a6/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.1.0-alpha05] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/1cc9f955f57ec857f35dca0f8e5a5c9d/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.1.0-alpha05] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/1cc9f955f57ec857f35dca0f8e5a5c9d/AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-alpha02] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5ebd749fc8b2d64c4b937282198e048b/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-alpha02] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5ebd749fc8b2d64c4b937282198e048b/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0-alpha05] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/1cc9f955f57ec857f35dca0f8e5a5c9d/AndroidManifest.xml:22:18-86
+	android:supportsRtl
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:12:13-39
+	android:label
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:10:13-39
+	android:roundIcon
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:11:13-58
+	android:icon
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:9:13-47
+	android:allowBackup
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:8:13-39
+	android:theme
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:13:13-46
+activity#com.example.clothonfly.MainActivity
+ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:14:9-20:20
+	android:name
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:14:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:15:13-19:29
+action#android.intent.action.MAIN
+ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:16:17-68
+	android:name
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:18:17-76
+	android:name
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml:18:27-74
+uses-sdk
+INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/a309dd56ddbd347d7eef3dcfd2ca28af/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/a309dd56ddbd347d7eef3dcfd2ca28af/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0-alpha02] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/0e31c5aad8fbb11b4457a427eff241a4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0-alpha02] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/0e31c5aad8fbb11b4457a427eff241a4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/011acb6267142885cd243197e392758f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/011acb6267142885cd243197e392758f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.0.2] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/72cc53fd7b9a8439d30b3e4dbe30a8b2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.0.2] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/72cc53fd7b9a8439d30b3e4dbe30a8b2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/668984cf22768c143f4a65dd6e537259/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/668984cf22768c143f4a65dd6e537259/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.volley:volley:1.1.1] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/6e571f6c448d3392293334eeb46b56a6/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/6e571f6c448d3392293334eeb46b56a6/AndroidManifest.xml:7:5-43
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5a41b48a809af5810a965c9f56f2cbaa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5a41b48a809af5810a965c9f56f2cbaa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/21fcb96cae8d0d86b0c475e8179bd8f3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/21fcb96cae8d0d86b0c475e8179bd8f3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/dbdd5e1c32b54e0a153b2672edc57667/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/dbdd5e1c32b54e0a153b2672edc57667/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/4fa6765ab7d184980591a50511e014c1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/4fa6765ab7d184980591a50511e014c1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/a1d82f6f3bcae3427277e52f81feb567/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/a1d82f6f3bcae3427277e52f81feb567/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-alpha01] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/c10f3f1d3031de12cbc7842fc521f697/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-alpha01] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/c10f3f1d3031de12cbc7842fc521f697/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/47a7c86cc797907dae57cef5b9a673d8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/47a7c86cc797907dae57cef5b9a673d8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.1] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/da576e0c4d6956606a1bfd064513e2a4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.1] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/da576e0c4d6956606a1bfd064513e2a4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0-alpha01] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5aa37610548a8980e829a7df6c88a98c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0-alpha01] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5aa37610548a8980e829a7df6c88a98c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/c2967264b619fd894f7ec822b68bf6fd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/c2967264b619fd894f7ec822b68bf6fd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/3a5130fb552f38159e4ad489dd2325fa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/3a5130fb552f38159e4ad489dd2325fa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5d2c1b1a1f6c4429c1a7a03bdc0ecded/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5d2c1b1a1f6c4429c1a7a03bdc0ecded/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0-alpha05] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/f76f5978e2c35cafa0b32735d932d6be/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0-alpha05] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/f76f5978e2c35cafa0b32735d932d6be/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/013871bee25884398f897d33d360e0d9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/013871bee25884398f897d33d360e0d9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/80fc91a9a4f9e2226bc29c776f1dab40/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/80fc91a9a4f9e2226bc29c776f1dab40/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/bd8a924dfef21938465c9b82d1d6338b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/bd8a924dfef21938465c9b82d1d6338b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/14d978eb934dd3804d5f8fafc47e13df/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/14d978eb934dd3804d5f8fafc47e13df/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/e49c0b1e520010f4c17303ec11f68ea3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/e49c0b1e520010f4c17303ec11f68ea3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/33d3c7d7331c9d9a8cd9b95ffbd45ebc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/33d3c7d7331c9d9a8cd9b95ffbd45ebc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/7f9951fea501173b0d3e805f77b522ac/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/7f9951fea501173b0d3e805f77b522ac/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/6e01f7d02ec86d28e24a0b5a287a5d28/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/6e01f7d02ec86d28e24a0b5a287a5d28/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/7d2474601494aee0a1ce410f086ad2de/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/7d2474601494aee0a1ce410f086ad2de/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/4d4cafc1fc93665a6cc1f8090e1d2ee5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/4d4cafc1fc93665a6cc1f8090e1d2ee5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/a65b38eadc602258ab4aa94fdb095a67/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/a65b38eadc602258ab4aa94fdb095a67/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0-alpha05] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/2bd1294cf93ef1b3c2070bd06ba3447c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0-alpha05] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/2bd1294cf93ef1b3c2070bd06ba3447c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0-alpha05] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/1cc9f955f57ec857f35dca0f8e5a5c9d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0-alpha05] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/1cc9f955f57ec857f35dca0f8e5a5c9d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-alpha02] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5ebd749fc8b2d64c4b937282198e048b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-alpha02] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/5ebd749fc8b2d64c4b937282198e048b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/17fbc656963bfa1b7c2ad8e440b90148/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/17fbc656963bfa1b7c2ad8e440b90148/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/d251f65fe30d9a9de42cb7366fa96d82/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/d251f65fe30d9a9de42cb7366fa96d82/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/e52a844425608ac4ee8cd9742f5c913c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/e52a844425608ac4ee8cd9742f5c913c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/25ecc9a87a98db0226f85200bb1306ed/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/25ecc9a87a98db0226f85200bb1306ed/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0-alpha02] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/3e6ce8cdd86ab266d1c9dbb707a536f2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0-alpha02] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/3e6ce8cdd86ab266d1c9dbb707a536f2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/50b9f151caed83a3e3cadc038880471d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-alpha03] /Users/tianyizhang/.gradle/caches/transforms-2/files-2.1/50b9f151caed83a3e3cadc038880471d/AndroidManifest.xml:20:5-44
+INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+		ADDED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/tianyizhang/Desktop/clothonfly/app/src/main/AndroidManifest.xml

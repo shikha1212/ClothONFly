@@ -1,0 +1,4 @@
+#Mon Aug 19 13:18:35 CDT 2019
+base.0=/Users/tianyizhang/Desktop/clothonfly/app/build/intermediates/dex/debug/mergeDexDebug/out
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Tue Aug 13 14:34:53 CDT 2019
+0.baseType=DIRECTORY
+0.base=/Users/shikha/AndroidStudioProjects/LoginLogout/app/build/intermediates/merged_assets/debug/out
+0.path=users.json
+0.set=ASSET
+count=1

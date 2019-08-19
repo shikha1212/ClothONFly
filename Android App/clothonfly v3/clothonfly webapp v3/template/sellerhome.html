@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action = "http://cloth-on-fly.appspot.com/uploader/{{ user_name }}" method = "POST"
+enctype = "multipart/form-data">
+
+    <style>
+        * {box-sizing: border-box;}
+
+        /* Add a black background color to the top navigation */
+        .navbar {
+            overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .navbar {
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,1.9);
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #2D3033;
+            text-align: right;
+            padding: 5px 40px;
+            text-decoration: none;
+            font-size: 17px;
+            font-family: Roboto;
+        }
+
+        /* Change the color of links on hover */
+        .navbar a:hover {
+            color: #D35C37;
+        }
+
+        legend {
+            border: 1px solid #888;
+            border-right: 1px solid #666;
+            border-bottom: 1px solid #666;
+            padding: .5em;
+            background-color: #97B8C2;
+            font-family: Roboto;
+        }
+
+        body {
+            padding-top: 70px;
+            background-color: #D6C6B9;
+            font-family: Roboto;
+        }
+    </style>
+
+    <div id="legend">
+        <fieldset>
+            <legend class="">Welcome {{ user_name }} !<br>
+                Enter the details of the item you want to put on rent and click on the "Submit" button <br>
+                {{ message }}
+            </legend>
+
+            <div class="navbar" id="menu">
+                <a href="/sellerhome/{{ user_name }}">Home</a>
+                <a href="/all_orders_for_seller/{{ user_name}}">All Orders</a>
+                <a href="/orders_for_shipment/{{ user_name}}">Orders Ready for Shipment</a>
+                <a href="/orders_for_depositrefund/{{ user_name}}">Orders for Refunding Deposit</a>
+                <a href="/orders_for_depositwithhold/{{ user_name}}">Orders for Withholding Deposit</a>
+                <a href="/logout">Sign Out</a>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="control-group">
+        <!-- Brand -->
+        <label class="control-label"  for="brand">Brand</label>
+        <div class="controls">
+            <input type="text" id="brand" name="brand" placeholder="" class="input-xlarge" required>
+            <p class="help-block">Enter the name of the brand of the item</p>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <!-- Type-->
+        <label class="control-label" for="type">Type</label>
+        <div class="controls">
+            <input type="text" id="type" name="type" placeholder="" class="input-xlarge" required>
+            <p class="help-block">Enter the type of clothing item (e.g. dress, skirt, shirt, etc.)</p>
+        </div>
+    </div>
+
+
+    <div class="control-group">
+        <!-- Size -->
+        <label class="control-label"  for="size">Size</label>
+        <div class="controls">
+            <input type="text" id="size" name="size" placeholder="" class="input-xlarge" required>
+        <p class="help-block">Enter the Size of Clothing Item</p>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <!-- Gender -->
+        <label class="control-label" for="gender">Gender</label>
+        <div class="controls">
+            <input type="radio" name="gender" value="Male" required> Male </input> <br>
+            <input type="radio" name="gender" value="Female" > Female</input><br>
+      </div>
+    </div>
+
+    <div class="control-group">
+        <!-- Original Price -->
+        <label class="control-label"  for="original_price">Original Price($)</label>
+        <div class="controls">
+            <input type="number" step="0.01" id="original_price" name="original_price" placeholder="" class="input-xlarge" required>
+            <p class="help-block">Enter the Original Price of the item</p>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <!-- Rental Price -->
+        <label class="control-label"  for="rental_price">Rental Price($)</label>
+        <div class="controls">
+            <input type="number" step="0.01" id="rental_price" name="rental_price" placeholder="" class="input-xlarge" required>
+            <p class="help-block">Enter the Rental Price(per day) of the item </p>
+        </div>
+    </div>
+
+     <!--<div class="control-group">-->
+      <!--&lt;!&ndash; Username &ndash;&gt;-->
+      <!--<label class="control-label"  for="Owner_ID">Owner ID</label>-->
+      <!--<div class="controls">-->
+        <!--<input type="text" id="Owner_ID" name="Owner_ID" placeholder="" class="input-xlarge">-->
+        <!--<p class="help-block">Enter your ID </p>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <div class="control-group">
+        <!-- Location -->
+        <label class="control-label"  for="location">Location</label>
+        <div class="controls">
+            <input type="text" id="location" name="location" placeholder="" class="input-xlarge" required>
+            <p class="help-block">Enter the location where this item is available</p>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <!-- Deposit -->
+        <label class="control-label"  for="deposit">Deposit ($)</label>
+        <div class="controls">
+            <input type="number" step="0.01" id="deposit" name="deposit" placeholder="" class="input-xlarge" required>
+            <p class="help-block">Enter the Deposit amount required for renting this item </p>
+        </div>
+    </div>
+
+    <!--<div class="control-group">-->
+        <!--&lt;!&ndash; Image &ndash;&gt;-->
+        <!--<label class="control-label" for="image">Image </label>-->
+        <!--<div class="controls">-->
+            <!--<input type="file" id="image" name="image" placeholder="" class="input-xlarge" required>-->
+            <!--<p class="help-block">Upload the image of the item here</p>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+    <div class="control-group">
+      <!-- Image -->
+      <!--<label class="control-label" for="file">Image </label>-->
+      <div class="controls">
+        <input type="file" id="file" name="file" placeholder="" >
+        <p class="help-block">Upload the image of the item here</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+        <!-- Button -->
+        <div class="controls">
+            <button class="btn btn-success">Next</button>
+        </div>
+    </div>
+
+</form>
+
+{% endblock %}
