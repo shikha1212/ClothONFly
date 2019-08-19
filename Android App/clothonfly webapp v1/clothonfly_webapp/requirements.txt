@@ -1,0 +1,5 @@
+flask==1.0.2
+PyMySQL==0.9.3
+google-cloud-storage==1.13.0
+GoogleAppEngineCloudStorageClient==1.9.22.1
+werkzeug==0.15.5
