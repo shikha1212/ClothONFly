@@ -1,56 +1,79 @@
-# ClothONFly
+# Cloth-ON-Fly
 
-Introduction to Cloth ON Fly
-http://cloth-on-fly.appspot.com/info
+Cloth ON Fly is a clothing rental platform. Some people always have idle clothes staying in their shelf. Some other people always have the occasions that needs some clothes, but there is no appropriate clothes in their shelf. Cloth ON Fly is here to help. Buyers could rent clothes with us at a fraction of their original price. Sellers could put the clothes on our platform for renting. We also designed the access for Admin people to manage the whole website. Backend of the project is created using Python. The webapp was launched using Google App Engine; all of the data is stored in App Engine's Datastore, and the images were stored in GAE's Cloud Storage buckets. We also deploy an Android App using Kotlin by connecting with the web app.
 
-Cloth ON Fly WEB APP
-http://cloth-on-fly.appspot.com/
+Detailed Introduction could be found here: [Introduction to Cloth ON Fly](http://cloth-on-fly.appspot.com/info)
 
-Cloth ON Fly ANDROID APP .apk
-https://storage.cloud.google.com/clothonfly_bucket/app-debug.apk
-*Using android phone to click the link to download
+## Operations
 
-Narrative: 
-Cloth On Fly is a clothing rental platform.  Cloth On Fly has a website platform for all users; Android App platform for buyers. Cloth On Fly let buyers rent clothes at a fraction of their original price. Cloth On Fly also let sellers put their clothes for renting.
+1. User Signup (Buyer/Seller/Admin)
+2. User Login (Buyer/Seller/Admin)
+3. Add a new clothing item (Seller)
+4. Remove an existing clothing item (Seller/Admin)
+5. Display all available clothing items (Buyer)
+6. Rent an item – system creates an order in orders table (Buyer)
+7. Calculate and display total price of the order  (Buyer)
+8. Display all orders placed by a buyer (Buyer)
+9. Ship an item (Seller)
+10. Return an item (Buyer)
+11. Refund the deposit (Seller)
+12. Withhold the deposit (Seller)
+13. Remove an existing user (Admin)
+14. Logout
 
-Things of Interest:
-1. 	Buyer – A buyer can rent any available item from the platform by paying a deposit amount plus the rental price 
-2. 	Seller – A seller can add their clothing items on the platform for renting.
-3. 	Admins - Admin manages the site 
-4. 	Clothing Items – These are the items that available for renting 
-5.	Order – These are the orders placed by the buyers 
+## Products
 
-Business Rules:
-1.	An admin will authorize sellers on the platform
-2.	Any user can register as a buyer on the platform
-3.	Clothing Items are available from the date it is added on the system unless explicitly specified by the seller
-4.	Delivery Date of all rented items will be Current Date plus 7 days
-5.	Clothing item that has been rented out will not be available for renting till returned
-6.	Every clothing item will have a deposit amount and rental price per day as decided by the seller.
-7.	A buyer can rent any available item by paying the deposit amount plus the rental price (rental price per day * no. of days for which the item is rented). 
-a)	The buyer has to enter a return date by when he/she will return the product back to seller. 
-b)	The buyer has to return the item by the return date he has specified in the order, failing to do so will let the seller withhold the deposit paid by the user.
-c)	If the item is returned by the return date, the seller refunds the deposit amount and item is available for renting again
+* Click the link here to access our web app
 
-Operations:
-1.	Buyer Registration
-2.	Seller Registration
-3.	Admin Registration
-4.	User Login (Buyer/Seller/Admin)
-5.	Add a new clothing item (Seller/Admin)
-6.	Add clothing items in bulk
-7.	Update an existing clothing item (Seller/Admin)
-8.	Remove an existing clothing item (Seller/Admin)
-9.	Display all available clothing items (Buyer)
-10.	Rent an item – system creates an order in orders table (Buyer)
-11.	Calculate and display total price of the order
-12.	Display all orders placed by a buyer (Buyer)
-13.	Ship an item (Seller)
-14.	Return an item (Buyer)
-15.	Refund the deposit (Seller)
-16.	Withhold the deposit (Seller)
-17.	Display and Export(csv) all orders details including buyer, seller, item and order details (Admin)
-18.	Display and Export(csv) all orders for a seller (buyer, item and order details)
-19.	Logout
+  [Cloth ON Fly WEB APP](http://cloth-on-fly.appspot.com/)
+
+* Using android phone to click the link to download
+
+  [Cloth ON Fly ANDROID APP .apk](https://storage.cloud.google.com/clothonfly_bucket/app-debug.apk)
+
+## Languages
+
+* [Python][1]
+* [HTML][2] 
+* [CSS][3]
+* [Kotlin][4]
+* [XML][5]
+* [Cloud SQL][6]
+* [Sqlite3][7]
+
+## APIs
+
+* [Users API][8]
+* [cloudstorage API][9]
+* [Pymysql API][10]
+
+## Dependencies
+
+* [Googla App Engine][11]
+* [Flask][12]
+* [jinja2][13]
+* [Okhttp][14]
+* [Materialize][15]
+
+## Team
+
+* [Tianyi (Kelly) Zhang](https://www.linkedin.com/in/kellytianyizhang/) 
+* [Shikha Singh](https://www.linkedin.com/in/shikhasingh1212/)
 
 
+
+[1]: https://python.org
+[2]: https://www.w3schools.com/html/default.asp
+[3]: https://www.w3schools.com/css/default.asp
+[4]: https://kotlinlang.org/
+[5]: https://www.w3schools.com/xml/xml_whatis.asp
+[6]: https://cloud.google.com/sql/docs/
+[7]: https://www.sqlite.org/index.html
+[8]: https://developers.google.com/appengine/docs/python/users/
+[9]: https://cloud.google.com/appengine/docs/standard/python/cloud-sql/using-cloud-sql-mysql
+[10]: https://github.com/PyMySQL/PyMySQL
+[11]: https://developers.google.com/appengine
+[12]: https://flask.palletsprojects.com/en/1.1.x/
+[13]: http://jinja.pocoo.org/docs/
+[14]: https://square.github.io/okhttp/
+[15]: https://getmdl.io/
